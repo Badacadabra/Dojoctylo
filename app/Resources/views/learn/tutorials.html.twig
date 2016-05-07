@@ -1,0 +1,48 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    Choisissez un tuto et voyez comment bien taper au clavier | {{ parent() }} 
+{% endblock %}
+
+{% block content %}
+    <div id="wrapper" class="bambou">
+        <section id="tutoriels" class="padding">
+            <div class="bandeau">
+                <h2>Tutoriels</h2>
+                <p class="italique">&laquo; Pourquoi vouloir courir quand on ne sait pas encore marcher ? &raquo; &mdash; <span class="gras">Maître Taipingu</span></p>
+            </div>
+            <ul>
+                <li>
+                    <a href="index.php?p=apprendre&amp;m=tutoriels&amp;id=1">
+                        <article>
+                            <h3>Découverte des lettres avec dix doigts</h3>
+                            <p>Disposition : AZERTY</p>
+                            <p>Niveau : jeune apprenti</p>
+                            <p>Vous voulez apprendre à taper en AZERTY avec vos dix doigts sans regarder votre clavier mais vous ne savez pas comment vous y prendre ? Pas de problème, maître Taipingu est là pour vous enseigner les bases de la discipline !</p>
+                        </article>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?p=apprendre&amp;m=tutoriels&amp;id=2">
+                        <article>
+                            <h3>Utilisation des touches modificatrices</h3>
+                            <p>Disposition : AZERTY</p>
+                            <p>Niveau : disciple assidu</p>
+                            <p>Si vous savez comment taper au clavier sans trop le regarder et que vous trouvez chaque lettre sans trop d'efforts, vous êtes sur la bonne voie. Cependant, vous avez un peu de mal à taper les majuscules, la ponctuation, les chiffres et autres caractères spéciaux. Voyons cela ensemble.</p>
+                        </article>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?p=apprendre&amp;m=tutoriels&amp;id=3">
+                        <article>
+                            <h3>Saisie de caractères typographiques complexes</h3>
+                            <p>Disposition : AZERTY</p>
+                            <p>Niveau : ninjactylo</p>
+                            <p>Certains caractères typographiques posent réellement problème quand on utilise un clavier AZERTY. Les caractères en question n'apparaissent pas toujours sur le clavier et la façon d'y accéder dépend beaucoup du système d'exploitation. Êtes-vous prêt à relever le défi&nbsp;?</p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+{% endblock %}

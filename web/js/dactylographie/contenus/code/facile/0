@@ -1,0 +1,40 @@
+<div id="infos">Quelques règles CSS, Dojoctylo</div>
+<div id="contenu">header {
+    color: white;
+    height: 55px;
+    background-color: black;
+}
+
+header h1 {
+    display: inline-block;
+    font-size: 30px;
+    padding-top: 10px;
+    margin-left: 125px;
+    font-family: underwood_championregular, sans-serif;
+}
+
+header a#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+header a#logo img {
+    height: 35px;
+}
+
+header a:last-of-type {
+    font-weight: bold;
+    color: white;
+    float: right;
+    font-variant: small-caps;
+    position: relative;
+    top: 17px;
+    right: 10px;
+    transition: color .3s ease;
+}
+
+header a:last-of-type:hover {
+    color: #D0112B;
+}
+</div>

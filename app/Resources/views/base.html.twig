@@ -2,12 +2,67 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <title>{% block title %}Dojoctylo{% endblock %}</title>
+        <meta name="author" content="Baptiste Vannesson" />
+        <!--<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
+        <link rel="shortcut icon" type="image/png" href="{{ asset('img/charte-graphique/favicon.png') }}" />
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/large.css') }}" media="screen" />
+            <link rel="stylesheet" href="{{ asset('css/medium.css') }}" media="screen and (max-width: 1023px)" />
+            <link rel="stylesheet" href="{{ asset('css/small.css') }}" media="screen and (max-width: 599px)" />
+            <link rel="stylesheet" href="{{ asset('js/jquery-ui-1.11.4/jquery-ui.min.css') }}" />
+            <link rel="stylesheet" href="{{ asset('js/custom-scrollbar/jquery.mCustomScrollbar.min.css') }}" />
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <header>
+            <a href="{{ path('homepage') }}" title="Accueil" id="logo">
+                <img src="{{ asset('img/charte-graphique/clavier.png') }}" alt="Clavier" />
+            </a>
+            <h1>Dojoctylo</h1>
+            <div id="liensHeader">
+                {% block auth %}{% endblock %}
+            </div>
+        </header>
+        <nav id="top-menu">
+            <div class="paper"></div>
+            <ul>
+                <li><a href="{{ path('learn') }}">Apprendre</a></li>
+                <li><a href="{{ path('practice') }}">Pratiquer</a></li>
+                <li><a href="{{ path('fight') }}">Affronter</a></li>
+            </ul>
+            <div class="paper"></div>
+        </nav>
+        <section id="corps">
+            {% block content %}{% endblock %}
+        </section>
+        <footer>
+            <ul>
+                <li><a href="{{ path('legal_notice') }}">Mentions légales</a></li>
+                <li><a href="{{ path('faq') }}">FAQ</a></li>
+                <li><a href="mailto:21411850@etu.unicaen.fr">Contact</a></li>
+                <li><a href="{{ path('sitemap') }}">Plan du site</a></li>
+                <li><a href="index.php?p=classement&amp;m=jour">Classement</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://www.facebook.com/" title="Facebook"><img src="{{ asset('img/charte-graphique/icons_golden_64x64/facebook_64.png') }}" alt="Facebook" /></a></li>
+                <li><a href="https://twitter.com/" title="Twitter"><img src="{{ asset('img/charte-graphique/icons_golden_64x64/twitter_64.png') }}" alt="Twitter" /></a></li>
+                <li><a href="mailto:" title="E-mail"><img src="{{ asset('img/charte-graphique/icons_golden_64x64/mail-1_64.png') }}" alt="E-mail" /></a></li>
+            </ul>
+        </footer>
+        {% block scripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="{{ asset('js/jquery-ui-1.11.4/jquery-ui.min.js') }}"></script>
+            <script src="{{ asset('js/jquery-ui-1.11.4/custom/tooltip.js') }}"></script>
+            <script src="{{ asset('js/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+            <script>
+                $( document ).ready(function() {
+                    $( "body" ).mCustomScrollbar({ 
+                        theme: "dojoctylo",
+                        autoExpandScrollbar: true
+                    });
+                });
+            </script>
+        {% endblock %}
     </body>
 </html>

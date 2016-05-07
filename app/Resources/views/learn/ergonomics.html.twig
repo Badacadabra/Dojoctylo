@@ -1,0 +1,73 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('js/lightbox/css/lightbox.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}
+    Quelques claviers ergonomiques pour une frappe confort | {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div id="wrapper" class="bambou">
+        <section id="ergonomie" class="padding">
+            <div class="bandeau">
+                <h2>Claviers ergonomiques</h2>
+                <p class="italique">&laquo; Si le samouraï mérite un bon sabre, le dactylographe mérite un bon clavier. &raquo; &mdash; <span class="gras">Maître Taipingu</span></p>
+            </div>
+            <div id="claviers">
+                <section>
+                    <h3>Le clavier matriciel/orthogonal</h3>
+                    <a href="{{ asset('img/contenu/typematrix.png') }}" data-lightbox="typematrix" data-title="Typematrix 2030">
+                        <figure>
+                            <img src="{{ asset('img/contenu/typematrix.png') }}" alt="Typematrix 2030" />
+                            <figcaption>Typematrix 2030</figcaption>
+                        </figure>
+                    </a>
+                </section>
+                <section>
+                    <h3>Le clavier sectionné</h3>
+                    <a href="{{ asset('img/contenu/kinesis.jpg') }}" data-lightbox="kinesis" data-title="Kinesis Freestyle2 Solo">
+                        <figure>
+                            <img src="{{ asset('img/contenu/kinesis.jpg') }}" alt="Kinesis Freestyle2 Solo" />
+                            <figcaption>Kinesis Freestyle2 Solo</figcaption>
+                        </figure>
+                    </a>
+                </section>
+                <section>
+                    <h3>Le clavier en relief</h3>
+                    <a href="{{ asset('img/contenu/maltron.jpg') }}" data-lightbox="maltron" data-title="Maltron 3D">
+                        <figure>
+                            <img src="{{ asset('img/contenu/maltron.jpg') }}" alt="Maltron 3D" />
+                            <figcaption>Maltron 3D</figcaption>
+                        </figure>
+                    </a>
+                </section>
+                <section>
+                    <h3>Le clavier en triangle (ou « V inversé »)</h3>
+                    <a href="{{ asset('img/contenu/truly-ergonomic.jpg') }}" data-lightbox="truly-ergonomic" data-title="Truly Ergonomic Mechanical Keyboard">
+                        <figure>
+                            <img src="{{ asset('img/contenu/truly-ergonomic.jpg') }}" alt="Truly Ergonomic Mechanical Keyboard" />
+                            <figcaption>Truly Ergonomic Mechanical Keyboard</figcaption>
+                        </figure>
+                    </a>
+                </section>
+                <section>
+                    <h3>Le clavier futuriste</h3>
+                    <a href="{{ asset('img/contenu/datahand.jpg') }}" data-lightbox="datahand" data-title="DataHand">
+                        <figure>
+                            <img src="{{ asset('img/contenu/datahand.jpg') }}" alt="DataHand" />
+                            <figcaption>DataHand</figcaption>
+                        </figure>
+                    </a>
+                </section>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/lightbox/js/lightbox.min.js') }}"></script>
+{% endblock %}

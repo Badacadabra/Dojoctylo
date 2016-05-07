@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+    Affrontez d'autres ninjactylos dans le cadre de compétitions | {{ parent() }}
+{% endblock %}
+{% block content %}
+    <div id="wrapper" class="bambou">
+        <section id="affronter" class="padding choix">
+            <h2>Affronter</h2>
+            <nav id="sous-menu">
+                <ul>
+                    <li><a href="{{ path('fight_test') }}" title="Affrontez le chronomètre dans ce test de dactylographie">Test</a></li>
+                    <li><a href="{{ path('fight_challenge') }}" title="Provoquez un ami en duel. Qui sortira vainqueur ?">Défi</a></li>
+                    <li><a href="{{ path('fight_tournament') }}" title="Mesurez-vous à l'ensemble du dojo dans le cadre de compétitions">Tournoi</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="description">
+            <div class="bandeau">
+                <p>C'est ici que vous allez pouvoir montrer votre talent pour le combat dactylographique !</p>
+                <p>En passant un test, vous serez seul face au chronomètre. Vous aurez une minute pour donner le meilleur de vous-même, et à l'issue du temps imparti, un score vous sera attribué. Serez-vous capable d'entrer dans le classement des meilleurs ninjactylos ?</p>
+                <p>Si vous vous sentez d'attaque, vous souhaitez peut-être provoquer un ami ninja en duel. Cela est possible, mais attention... Ne sous-estimez jamais un adversaire. L'esprit du dragon dactylographique se cache parfois là où vous ne l'attendez pas...</p>
+                <p>Vous êtes un guerrier dans l'âme et souhaitez affronter tout le dojo ? Qu'à cela ne tienne... Entrez donc dans un tournoi et mesurez-vous à ceux qui osent vous défier.</p>
+                <p>Que le meilleur gagne sur Dojoctylo !</p>
+            </div>
+        </section>
+    </div>
+{% endblock %}
