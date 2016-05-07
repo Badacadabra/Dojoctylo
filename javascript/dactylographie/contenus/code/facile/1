@@ -1,0 +1,18 @@
+<div id="infos">Symfony, composer.json</div>
+<div id="contenu">"name": "symfony/symfony",
+"type": "library",
+"description": "The Symfony PHP framework",
+"keywords": ["framework"],
+"homepage": "http://symfony.com",
+"license": "MIT",
+"authors": [
+{
+"name": "Fabien Potencier",
+"email": "fabien@symfony.com"
+},
+{
+"name": "Symfony Community",
+"homepage": "http://symfony.com/contributors"
+}
+]
+</div>

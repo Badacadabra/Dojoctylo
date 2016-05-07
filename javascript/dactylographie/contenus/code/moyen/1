@@ -1,0 +1,19 @@
+<div id="infos">Noyau Linux, cpu.c</div>
+<div id="contenu">void cpu_hotplug_begin(void)
+{
+    DEFINE_WAIT(wait);
+
+    cpu_hotplug.active_writer = current;
+    cpuhp_lock_acquire();
+
+    for (;;) {
+        mutex_lock(&cpu_hotplug.lock);
+        prepare_to_wait(&cpu_hotplug.wq, &wait, TASK_UNINTERRUPTIBLE);
+        if (likely(!atomic_read(&cpu_hotplug.refcount)))
+            break;
+        mutex_unlock(&cpu_hotplug.lock);
+        schedule();
+    }
+    finish_wait(&cpu_hotplug.wq, &wait);
+}
+</div>

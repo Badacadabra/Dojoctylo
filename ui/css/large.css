@@ -1,0 +1,1614 @@
+/* ================================================== */
+/* ===================== Reset ===================== */
+/* ================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+:focus {
+    outline:none;
+}
+
+::-moz-focus-inner {
+    border:0;
+}
+
+/* ================================================== */
+/* ==================== Polices ==================== */
+/* ================================================ */
+
+@font-face {
+    font-family: 'underwood_championregular';
+    src: url('../polices/webfontkit-20150308-123622/underwood_champion-webfont.eot');
+    src: url('../polices/webfontkit-20150308-123622/underwood_champion-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../polices/webfontkit-20150308-123622/underwood_champion-webfont.woff2') format('woff2'),
+         url('../polices/webfontkit-20150308-123622/underwood_champion-webfont.woff') format('woff'),
+         url('../polices/webfontkit-20150308-123622/underwood_champion-webfont.ttf') format('truetype'),
+         url('../polices/webfontkit-20150308-123622/underwood_champion-webfont.svg#underwood_championregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sf_shai_fontairegular';
+    src: url('../polices/webfontkit-20150309-152942/SF_Shai_Fontai-webfont.eot');
+    src: url('../polices/webfontkit-20150309-152942/SF_Shai_Fontai-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../polices/webfontkit-20150309-152942/SF_Shai_Fontai-webfont.woff2') format('woff2'),
+         url('../polices/webfontkit-20150309-152942/SF_Shai_Fontai-webfont.woff') format('woff'),
+         url('../polices/webfontkit-20150309-152942/SF_Shai_Fontai-webfont.ttf') format('truetype'),
+         url('../polices/webfontkit-20150309-152942/SF_Shai_Fontai-webfont.svg#sf_shai_fontairegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'orchideelightregular';
+    src: url('../polices/webfontkit-20150309-190410/OrchideeLight-webfont.eot');
+    src: url('../polices/webfontkit-20150309-190410/OrchideeLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../polices/webfontkit-20150309-190410/OrchideeLight-webfont.woff2') format('woff2'),
+         url('../polices/webfontkit-20150309-190410/OrchideeLight-webfont.woff') format('woff'),
+         url('../polices/webfontkit-20150309-190410/OrchideeLight-webfont.ttf') format('truetype'),
+         url('../polices/webfontkit-20150309-190410/OrchideeLight-webfont.svg#orchideelightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ================================================== */
+/* ===================== Global ==================== */
+/* ================================================ */
+
+/* ===================== Divers ==================== */
+
+body {
+    background-image: url('../../images/charte-graphique/patterns/jpgs/webtreats-paper-pattern-2-brown.jpg');
+}
+
+p {
+    margin: 10px 0;
+}
+
+hr {
+    border: solid 1px black;
+}
+
+.padding {
+    padding: 50px 0;
+}
+
+.italique {
+    font-style: italic;
+}
+
+.gras {
+    font-weight: bold;
+}
+
+.contenu {
+    padding: 20px;
+    background-color: #E6E2A5;
+    border-radius: 10px;
+    box-shadow: 0 0 15px black;
+}
+
+.contenu h2 {
+    color: #582800;
+    margin-bottom: 15px;
+}
+
+.bambou {
+    background-image: url('../../images/charte-graphique/texture-bambou.jpg');
+    box-shadow: 0 0 10px black inset;
+}
+
+.bandeau {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    color: white;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0 0 15px black;
+}
+
+.bandeau h2 {
+    font-size: 30px;
+    font-family: underwood_championregular, sans-serif;
+}
+
+.liste {
+    text-align: center;
+}
+
+.liste p {
+    font-size: large;
+}
+
+.liste ol {
+    width: 85%;
+    max-width: 800px;
+    margin: auto;
+    list-style-type: none;
+}
+
+.liste ol li {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    margin: 15px 0;
+    color: white;
+    font-family: sf_shai_fontairegular, sans-serif;
+    font-weight: bold;
+    font-size: xx-large;
+    border: solid 5px black;
+    border-image: url('../../images/charte-graphique/texture-bamboo.jpg') 30 30 round;
+}
+
+.erreursFormulaires {
+    font-style: italic;
+    font-size: small;
+    color: #CB1D2E;
+}
+
+.edit {
+    height: 30px;
+}
+
+/* ====== Pop-up (utilisée pour la modif du profil et l'ajout d'exos) ====== */
+
+.pop-up {
+    display: block;
+    padding: 20px;
+    color: white;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px white;
+    position: absolute; left: 0; right: 0;
+    z-index: 2;
+}
+
+.pop-up #croix {
+    float: right;
+    background-color: black;
+    transition: opacity .3s ease;
+}
+
+.pop-up #croix:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.pop-up h3 {
+    text-align: center;
+    font-size: 42px;
+    font-family: sf_shai_fontairegular, sans-serif;
+}
+
+.pop-up fieldset {
+    width: 50%;
+    margin: auto;
+}
+
+.pop-up fieldset input,
+.pop-up fieldset textarea {
+    padding: 7px;
+    margin: 17px 0;
+    width: 100%;
+    font-family: serif;
+    font-size: 14px;
+    display: block;
+    border-radius: 5px;
+}
+
+.pop-up fieldset input:focus,
+.pop-up fieldset textarea:focus {
+    background-color: #F2F2F2;
+}
+
+.pop-up fieldset textarea {
+    height: 111px;
+    resize: none;
+}
+
+.pop-up fieldset input[type='submit'] {
+    font-size: x-large;
+    font-weight: bold;
+    font-variant: small-caps;
+    color: white;
+    background-color: #D0112B;
+    border: solid 2px white;
+    cursor: pointer;
+    transition: box-shadow .3s ease;
+}
+
+.pop-up fieldset input[type='submit']:hover {
+    box-shadow: 0 0 12px black inset;
+}
+
+div#noir .pop-up input[type="radio"] {
+    display: none;
+}
+
+div#noir .pop-up input[type="radio"] + label {
+    color: white;
+    font-size: 17px;
+    margin-right: 15px;
+}
+
+div#noir .pop-up input[type="radio"] + label span {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    margin: -1px 8px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 50%;
+}
+
+div#noir .pop-up input[type="radio"]:checked + label span {
+     background-color: #D0112B;
+}
+
+div#noir .pop-up input[type="radio"] + label span,
+div#noir .pop-up input[type="radio"]:checked + label span {
+    transition: background-color 0.3s linear;
+}
+
+div.pop-up {
+    width: 500px;
+    height: 100px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto;
+    border: solid 2px #D0112B;
+    box-shadow: 0 0 25px #D0112B;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0; 
+    z-index: 2;
+}
+
+div.pop-up button {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px 0;
+    padding: 10px;
+    color: white;
+    background-color: #D0112B;
+    font-weight: bold;
+    font-size: large;
+    border: solid 2px white;
+    cursor: pointer;
+    transition: box-shadow .3s ease;
+}
+
+div.pop-up button:hover {
+    box-shadow: 0 0 12px black inset;
+}
+
+#fondu {
+    display: none;
+    background: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+    z-index: 1;
+    position: fixed;
+    top: 0; left: 0;
+}
+
+/* ==== Choix et descriptions (Apprendre, Pratiquer, Affronter) ==== */
+
+.choix {
+    width: 85%;
+    margin: auto;
+}
+
+.choix h2 {
+    color: white;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    font-family: orchideelightregular, sans-serif;
+    font-size: xx-large;
+    border-top: solid 3px white;
+    border-left: solid 3px white;
+    border-right: solid 3px white;
+    background-color: rgba(177, 24, 26, 0.9);
+    border-radius: 20px 20px 0 0;
+}
+
+.choix nav#sous-menu ul {
+    list-style-type: none;
+    border: solid 10px black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url('../../images/charte-graphique/patterns/jpgs/webtreats-paper-pattern-2-brown.jpg');
+    border-image: url('../../images/charte-graphique/texture-bamboo.jpg') 30 30 round;
+    box-shadow: 0 0 15px black;
+}
+
+.choix nav#sous-menu ul li {
+    width: 25%;
+    text-align: center;
+    margin: 15px;
+    border: solid 10px black;
+    border-image: url('../../images/charte-graphique/patterns/jpgs/webtreats-paper-pattern-1-brown.jpg') 30 30 round;
+    box-shadow: 0 0 5px black;
+}
+
+.choix nav#sous-menu ul li a {
+    display: block;
+    color: white;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 40px;
+    font-weight: bold;
+    font-family: sf_shai_fontairegular, sans-serif;
+    transition: background-color .3s ease;
+}
+
+.choix nav#sous-menu ul li a:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+section.description {
+    padding-bottom: 50px;
+}
+
+section.description div {
+    border: solid 2px white;
+    width: 80%;
+    margin: auto;
+    font-family: underwood_championregular;
+    font-size: large;
+}
+
+/* =========== Infobulles (tooltips) =========== */
+
+.ui-tooltip, .arrow:after {
+    background: black;
+    border: 2px solid white;
+}
+
+.ui-tooltip {
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    font: 16px "underwood_championregular", Sans-Serif;
+    box-shadow: 0 0 5px black;
+}
+
+.arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+}
+
+.arrow.top {
+    top: -16px;
+    bottom: auto;
+}
+
+.arrow.left {
+    left: 20%;
+}
+
+.arrow:after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 6px 5px 9px -9px black;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.arrow.top:after {
+    bottom: -20px;
+    top: auto;
+}
+
+/* =========== Ascenseurs (scrollbars) =========== */
+
+html, body {
+    height:100%;
+}
+
+.mCS-dojoctylo.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+    background-color: white;
+    width: 8px;
+}
+
+.mCS-dojoctylo.mCSB_inside > .mCSB_container {
+    margin-right: 0;
+}
+
+/* ================================================== */
+/* ===================== Header ==================== */
+/* ================================================ */
+
+header {
+    color: white;
+    height: 55px;
+    background-color: black;
+}
+
+header h1 {
+    display: inline-block;
+    font-size: 30px;
+    padding-top: 10px;
+    margin-left: 125px;
+    font-family: underwood_championregular, sans-serif;
+}
+
+header a#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+header a#logo img {
+    height: 35px;
+}
+
+header div#liensHeader {
+    display: inline;
+}
+
+header div#liensHeader a {
+    position: relative;
+    top: 17px;
+    right: 20px;
+    font-weight: bold;
+    color: white;
+    float: right;
+    margin-left: 5px;
+    font-variant: small-caps;
+    transition: color .3s ease;
+}
+
+header div#liensHeader a:hover {
+    color: #D0112B;
+}
+
+/* ================================================== */
+/* ================== Navigation =================== */
+/* ================================================ */
+
+nav#top-menu {
+    background-color: #A88F66;
+    box-shadow: 0 0 7px white;
+}
+
+nav#top-menu .paper {
+    height: 30px;
+    background-image: url('../../images/charte-graphique/patterns/jpgs/webtreats-paper-pattern-1-brown.jpg');
+}
+
+nav#top-menu ul {
+    list-style-type: none;
+    text-align: center;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: large;
+    border-top: solid 3px black;
+    border-bottom: solid 3px black;
+}
+
+nav#top-menu ul li {
+    display: inline-block;
+    padding: 15px;
+}
+
+nav#top-menu ul li a {
+    color: black;
+    padding: 10px;
+    font-family: orchideelightregular, sans-serif;
+    font-size: xx-large;
+    transition: text-shadow .3s ease;
+}
+
+nav#top-menu ul li a:hover {
+    text-shadow: 0 0 3px white;
+}
+
+/* ================================================== */
+/* ==================== Accueil ==================== */
+/* ================================================ */
+
+section#corps #accueil {
+    width: 85%;
+    margin: auto;
+}
+
+section#corps #accueil section {
+    padding: 30px;
+    margin: 30px 0;
+    border: solid 10px black;
+    display: flex;
+    justify-content: space-between;
+    border-image: url('../../images/charte-graphique/texture-bamboo.jpg') 30 30 round;
+    box-shadow: 0 0 10px black;
+    text-shadow: 0 0 1px black;
+}
+
+section#corps #accueil section:first-of-type {
+    background-color: rgba(165, 42, 42, 0.5);
+}
+
+section#corps #accueil section:nth-of-type(2) {
+    background-color: rgba(180, 213, 60, 0.5);
+}
+
+section#corps #accueil section:nth-of-type(3) {
+    background-color: rgba(192, 192, 192, 0.5);
+}
+
+section#corps #accueil section:nth-of-type(4) {
+    background-color: rgba(233, 121, 0, 0.5);
+}
+
+section#corps #accueil section:last-of-type {
+    background-color: rgba(127, 187, 197, 0.5);
+}
+
+section#corps #accueil section aside {
+    width: 25%;
+}
+
+section#corps #accueil section aside img {
+    /* width: 250px; */
+    height: 220px;
+    display: block;
+    margin: auto;
+}
+
+section#corps #accueil section article {
+    width: 70%;
+}
+
+section#corps #accueil section article h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: sf_shai_fontairegular, sans-serif;
+    font-size: 42px;
+    border: solid 2px white;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 100px;
+    box-shadow: 0 0 10px white;
+    transition: background-color .5s ease-in-out;
+}
+
+section#corps #accueil section article h2:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: black;
+    box-shadow: 0 0 10px black;
+}
+
+section#corps #accueil section article h2 a {
+    display: block;
+    color: white;
+    padding: 10px;
+}
+
+section#corps #accueil section article h2 a:hover {
+    color: black;
+}
+
+section#corps #accueil section article p {
+    font-family: underwood_championregular, serif;
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+
+/* ================================================== */
+/* =================== Connexion =================== */
+/* ================================================ */
+
+section#corps section#login-signup {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+section#corps section#login-signup h2 {
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: solid 1px white;
+    font-family: underwood_championregular, serif;
+}
+
+section#corps section#login-signup input {
+    display: block;
+    padding: 7px;
+    margin: 10px 0;
+    border: solid 2px white;
+    border-radius: 8px;
+}
+
+section#corps section#login-signup input[type='text']:focus,
+section#corps section#login-signup input[type='password']:focus {
+    background-color: #F2F2F2;
+}
+
+section#corps section#login-signup input[type='submit'] {
+    color: white;
+    background-color: #D0112B;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+section#corps section#login-signup input[type='submit']:hover {
+    text-shadow: 0 0 1px white;
+}
+
+section#corps section#login, section#corps section#signup {
+    background-color: black;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
+    opacity: 0.9;
+    transition: box-shadow .3s ease;
+}
+
+section#corps section#login:hover, section#corps section#signup:hover {
+    box-shadow: 0 0 10px #CC1D2F;
+}
+
+@media screen and (max-width: 1200px) {
+    section#corps section#login-signup img {
+        display: none;
+    }
+}
+
+/* ================================================== */
+/* ==================== Profil ===================== */
+/* ================================================ */
+
+/* ============= Colonne de gauche ============== */
+
+section#corps div#wrapper section#profil {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+section#corps div#wrapper section#profil section#infos {
+    width: 30%;
+}
+
+section#corps div#wrapper section#profil section#infos div#presentation {
+    margin-bottom: 30px;
+    overflow: auto;
+}
+
+section#corps div#wrapper section#profil section#infos div#presentation,
+section#corps div#wrapper section#profil section#infos div#compte-rendu {
+    margin-right: 30px;
+    border: solid 5px black;
+    font-family: underwood_championregular, sans-serif;
+    border-image: url('../../images/charte-graphique/texture-bamboo.jpg') 30 30 round;
+}
+
+section#corps div#wrapper section#profil section#infos div#presentation h2,
+section#corps div#wrapper section#profil section#infos div#compte-rendu h3 {
+    color: #582800;
+    text-align: center;
+    font-family: sf_shai_fontairegular, sans-serif;
+    font-size: xx-large;
+}
+
+section#corps div#wrapper section#profil section#infos div#compte-rendu h3 {
+    margin-bottom: 25px;
+}
+
+section#corps div#wrapper section#profil section#infos div#presentation img {
+    width: 100px;
+    max-height: 200px;
+    margin-right: 15px;
+    float: left;
+    border: solid 2px black;
+    transition: border-color .3s ease;
+}
+
+section#corps div#wrapper section#profil section#infos div#presentation img:hover {
+    border-color: #D0112B;
+}
+
+section#corps div#wrapper section#profil section#infos div#presentation button#modifProfil {
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-variant: small-caps;
+    width: 100%;
+    padding: 5px;
+    margin-left: auto;
+    margin-top: 10px;
+    transition: background-color .3s ease;
+}
+
+section#corps div#wrapper section#profil section#infos div#presentation button#modifProfil:hover {
+    background-color: #D0112B;
+    cursor: pointer;
+}
+
+section#corps div#wrapper section#profil section#infos div#compte-rendu p {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ============= Colonne de droite ============== */
+
+section#corps div#wrapper section#profil aside#stats div#placeholder {
+    width: 500px;
+    height: 300px;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+section#corps div#wrapper section#profil aside#stats section {
+    padding: 0;
+    margin-bottom: 30px;
+    background-color: #E6E2A5;
+    border: solid 5px black;
+    border-image: url('../../images/charte-graphique/texture-bamboo.jpg') 30 30 round;
+    box-shadow: 0 0 15px black;
+}
+
+section#corps div#wrapper section#profil aside#stats section:first-of-type {
+    height: 375px;
+    width: 530px;
+}
+
+section#corps div#wrapper section#profil aside#stats section h3 {
+    padding: 15px;
+    color: #582800;
+    text-align: center;
+    font-size: xx-large;
+    font-family: sf_shai_fontairegular, sans-serif;
+}
+
+section#corps div#wrapper section#profil aside#stats section a {
+    display: block;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    font-style: italic;
+    text-align: right;
+    text-shadow: 0 0 1px white;
+    transition: color .3s ease;
+}
+
+section#corps div#wrapper section#profil aside#stats section a:after {
+    content: " >";
+}
+
+section#corps div#wrapper section#profil aside#stats section a:hover {
+    color: #D0112B;
+    text-shadow: 0 0 1px #D0112B;
+}
+
+section#corps div#wrapper section#profil aside#stats section div.trophees {
+    text-align: center;
+}
+
+section#corps div#wrapper section#profil aside#stats section div.trophees:first-of-type {
+    background-color: rgba(165, 42, 42, 0.5);
+}
+
+section#corps div#wrapper section#profil aside#stats section div.trophees:nth-of-type(2) {
+    background-color: rgba(180, 213, 60, 0.5);
+}
+
+section#corps div#wrapper section#profil aside#stats section div.trophees:nth-of-type(3) {
+    background-color: rgba(192, 192, 192, 0.5);
+}
+
+section#corps div#wrapper section#profil aside#stats section div.trophees:nth-of-type(4) {
+    background-color: rgba(233, 121, 0, 0.5);
+}
+
+section#corps div#wrapper section#profil aside#stats section div.trophees:last-of-type {
+    background-color: rgba(127, 187, 197, 0.5);
+}
+
+section#corps div#wrapper section#profil aside#stats section div.trophees h4 {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+section#corps div#wrapper section#profil aside#stats section div.trophees img {
+    height: 60px;
+    margin: 0 10px;
+    padding: 10px 0;
+}
+
+/* ================================================== */
+/* ================== Récompenses ================== */
+/* ================================================ */
+
+section#corps section#recompenses ul {
+    list-style-type: none;
+}
+
+section#corps section#recompenses > ul > li:first-of-type {
+    background-color: rgba(165, 42, 42, 0.5);
+}
+
+section#corps section#recompenses > ul > li:nth-of-type(2) {
+    background-color: rgba(180, 213, 60, 0.5);
+}
+
+section#corps section#recompenses > ul > li:nth-of-type(3) {
+    background-color: rgba(192, 192, 192, 0.5);
+}
+
+section#corps section#recompenses > ul > li:nth-of-type(4) {
+    background-color: rgba(233, 121, 0, 0.5);
+}
+
+section#corps section#recompenses > ul > li:last-of-type {
+    background-color: rgba(127, 187, 197, 0.5);
+}
+
+section#corps section#recompenses > ul > li h3 {
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: xx-large;
+    font-family: sf_shai_fontairegular, sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+section#corps section#recompenses > ul > li > ul {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+section#corps section#recompenses ul li ul li .description {
+    display: none;
+}
+
+section#corps section#recompenses ul li ul li figure {
+    text-align: center;
+}
+
+section#corps section#recompenses ul li ul li figure img {
+    height: 100px;
+}
+
+section#corps section#recompenses ul li ul li figure figcaption {
+    color: white;
+    text-align: center;
+    font-variant: small-caps;
+    font-size: large;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color .3s ease;
+}
+
+section#corps section#recompenses ul li ul li figure:hover figcaption {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* ================================================== */
+/* =================== Apprendre =================== */
+/* ================================================ */
+
+/* ================ Page de conseils ================ */
+/* --> cf. classe liste */ 
+
+/* ================== Choix du tutoriel =================== */
+
+section#corps div#wrapper section#tutoriels h2,
+section#corps div#wrapper section#tutoriels h3,
+section#corps div#wrapper section#tutoriels p {
+    text-align: center;
+}
+
+section#corps div#wrapper section#tutoriels h3 {
+    font-family: sf_shai_fontairegular, sans-serif;
+}
+
+section#corps div#wrapper section#tutoriels p {
+    font-size: large;
+}
+
+section#corps div#wrapper section#tutoriels ul {
+    width: 85%;
+    margin: auto;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+section#corps div#wrapper section#tutoriels ul li {
+    width: 30%;
+    margin: 15px 0;
+    border: solid 5px black;
+    border-image: url('../../images/charte-graphique/texture-bamboo.jpg') 30 30 round;
+}
+
+section#corps div#wrapper section#tutoriels ul li a {
+    display: block;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    font-size: xx-large;
+    transition: background-color .3s ease;
+}
+
+section#corps div#wrapper section#tutoriels ul li a:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+section#corps div#wrapper section#tutoriels ul li a article p {
+    padding-top: 10px;
+    border-top: dotted 1px white;
+}
+
+section#corps div#wrapper section#tutoriels ul li a:hover article p {
+    border-top: dotted 1px black;
+}
+
+/* ================== Page de tutoriel =================== */
+
+section#corps div#wrapper article.tuto {
+    width: 100%;
+}
+
+section#corps div#wrapper article.tuto #en-tete {
+    text-align: center;
+    color: white;
+    padding: 7px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 7px white;
+    border-radius: 0;
+}
+
+section#corps div#wrapper article.tuto #en-tete h2 {
+    color: white;
+    font-family: sf_shai_fontairegular, sans-serif;
+    font-size: xx-large;
+}
+
+section#corps div#wrapper article.tuto div#colonnes {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+section#corps div#wrapper article.tuto div#colonnes aside {
+    width: 25%;
+    margin-top: 30px;
+}
+
+section#corps div#wrapper article.tuto div#colonnes aside img {
+    width: 100%;
+}
+
+section#corps div#wrapper article.tuto div#colonnes aside .anecdotes {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+}
+
+section#corps div#wrapper article.tuto div#colonnes aside .anecdotes h4 {
+    font-size: large;
+    border-bottom: solid 1px white;
+}
+
+section#corps div#wrapper article.tuto div#colonnes #texte-principal {
+    margin-top: 30px;
+    padding: 15px 0;
+    width: 70%;
+}
+
+section#corps div#wrapper article.tuto div#colonnes #texte-principal h3 {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin: 15px 0;
+    font-family: underwood_championregular, serif;
+    font-variant: small-caps;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-image: url('../../images/dragon-42984_640.png');
+}
+
+section#corps div#wrapper article.tuto div#colonnes #texte-principal p {
+    padding: 0 30px;
+}
+
+section#corps div#wrapper article.tuto div#colonnes #texte-principal ul,
+section#corps div#wrapper article.tuto div#colonnes #texte-principal ol {
+    margin-left: 50px;
+}
+
+section#corps div#wrapper article.tuto div#colonnes #texte-principal ul {
+    list-style-type: circle;
+}
+
+section#corps div#wrapper article.tuto div#colonnes #texte-principal img {
+    display: block;
+    margin: auto;
+    max-width: 95%;
+}
+
+/* ================== Page sur l'ergonomie =================== */
+
+section#corps div#wrapper section#ergonomie {
+    text-align: center;
+}
+
+section#corps div#wrapper section#ergonomie div#claviers {
+    width: 85%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: solid 10px black;
+    border-image: url('../../images/charte-graphique/texture-bamboo.jpg') 30 30 round;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+section#corps div#wrapper section#ergonomie section {
+    margin: 20px;
+    width: 400px;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    transition: transform .3s ease-in-out;
+}
+
+section#corps div#wrapper section#ergonomie section:hover {
+    transform: scale(1.05);
+}
+
+section#corps div#wrapper section#ergonomie section h3 {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    font-variant: small-caps;
+    opacity: 0.9;
+}
+
+section#corps div#wrapper section#ergonomie p {
+    font-size: large;
+}
+
+section#corps div#wrapper section#ergonomie section a {
+    color: black;
+}
+
+section#corps div#wrapper section#ergonomie section a figure {
+    padding: 25px 0;
+}
+
+section#corps div#wrapper section#ergonomie section a figure img {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+section#corps div#wrapper section#ergonomie section a figure figcaption {
+    background-color: #E6E2A5;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    font-family: sans-serif;
+}
+
+/* ================================================== */
+/* ============= Pratiquer & Affronter ============= */
+/* ================================================ */
+
+/* Styles statiques */
+
+section#corps div#noir {
+    min-height: 533px;
+    background-color: black;
+}
+
+section#corps div#noir button#ajoutExercice,
+section#corps div#noir a#gererExercices,
+section#corps div#noir button#activerTchat
+ {
+    background-color: black;
+    float: right;
+    margin: 30px 30px 0 0;
+    transition: opacity .3s ease;
+}
+
+section#corps div#noir button#ajoutExercice {
+    margin-right: 80px;
+}
+
+section#corps div#noir button#ajoutExercice:hover,
+section#corps div#noir a#gererExercices:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+section#corps div#noir button#ajoutExercice img,
+section#corps div#noir a#gererExercices img,
+section#corps div#noir button#activerTchat img {
+    height: 30px;
+}
+
+section#corps div#noir section#formulaireAjoutExercice {
+    position: static;
+}
+
+section#corps section#exercice {
+    color: white;
+    text-align: center;
+    width: 700px;
+    margin: auto;
+}
+
+section#corps div#noir section#exercice h2 {
+    font-family: 'sf_shai_fontairegular', serif;
+    font-size: xx-large;
+    margin-bottom: 30px;
+}
+
+section#corps div#noir section#exercice div#top-container {
+    min-height: 42px;
+    padding-bottom: 12px;
+}
+
+section#corps div#noir section#exercice div#a-taper {
+    text-align: left;
+    width: 600px;
+    height: 198px;
+    margin: auto;
+    padding: 10px;
+    border: solid 3px white;
+    font-family: monospace;
+    font-size: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+section#corps div#noir section#exercice div#dactylo {
+    margin-top: 20px;
+}
+
+section#corps div#noir section#exercice div#dactylo textarea#zone-saisie {
+    padding: 10px;
+    height: 25px;
+    width: 550px;
+    font-size: 20px;
+    display: inline-block;
+    overflow: hidden;
+    resize: none;
+    border-radius: 5px;
+}
+
+section#corps div#noir section#exercice div#dactylo textarea#zone-saisie:focus {
+    background-color: #F2F2F2;
+}
+
+section#corps div#noir section#exercice div#dactylo button#refresh {
+    display: inline-block;
+    background-color: transparent;
+}
+
+@keyframes monAnimation {
+    from { transform: rotate(180deg); }
+    to { transform: rotate(-180deg); }
+}
+
+section#corps div#noir section#exercice div#dactylo button#refresh:hover,
+section#corps div#noir section#exercice div#dactylo button#refresh:focus {
+    animation: monAnimation .5s linear infinite;
+    cursor: pointer;
+}
+
+section#corps div#noir section#exercice div#performance {
+    margin-top: 20px;
+    font-size: large;
+}
+
+section#corps div#noir section#exercice div#performance #temps {
+    font-family: 'sf_shai_fontairegular', serif;
+    font-size: xx-large;
+}
+
+section#corps div#noir section#exercice div#difficulte button {
+    color: white;
+    margin: 10px;
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 3px;
+}
+
+section#corps div#noir section#exercice div#difficulte button:first-of-type {
+    background-color: green;
+}
+
+section#corps div#noir section#exercice div#difficulte button:nth-of-type(2) {
+    background-color: #C07E23;
+}
+
+section#corps div#noir section#exercice div#difficulte button:last-of-type {
+    background-color: #D0112B;
+}
+
+section#corps div#noir section#exercice div#difficulte button:hover {
+    text-shadow: 0 0 5px white;
+    cursor: pointer;
+}
+
+/* Styles dynamiques (exercices) */
+
+.valide {
+    color: white;
+    background-color: green;
+}
+
+.invalide {
+    color: white;
+    background-color: #D0112B;
+}
+
+.next {
+    background-color: gray;
+}
+
+#performance #vitesse,
+#performance #precision {
+    display: inline-block;
+    background-color: #D0112B;
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    width: 620px;
+    height: 30px;
+    font-size: x-large;
+    font-weight: bold;
+    text-shadow: 0 0 3px black;
+    box-shadow: 0 0 10px black;
+}
+
+#performance #vitesse {
+    top: 420px;
+}
+
+#performance #precision {
+    top: 470px;
+}
+
+/* Gestion des exercices personnalisés */
+
+section#corps div#noir section#formulaireModifExercice {
+    position: static;
+    padding: 80px 0 0 0;
+    box-shadow: none;
+}
+
+/* Tchat */
+
+section#corps div#noir button#activerTchat {
+    cursor: pointer;
+}
+
+section#corps div#noir section#exercice section#tchat {
+    background-color: black;
+    padding: 15px 5px;
+    border: solid 2px white;
+    border-radius: 5px;
+    height: 350px;
+    width: 350px;
+    cursor: move;
+    position: absolute;
+    top: 300px; left: 50px;
+}
+
+section#corps div#noir section#exercice section#tchat input#message,
+section#corps div#noir section#exercice section#tchat button#envoyer {
+    padding: 5px;
+    color: white;
+    border: solid 2px white;
+    background-color: black;
+}
+
+section#corps div#noir section#exercice section#tchat button#envoyer {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+section#corps div#noir section#exercice section#tchat button#envoyer:focus {
+   background-color: #D0112B;
+}
+
+section#corps div#noir section#exercice section#tchat div#discussion {
+    padding-top: 5px;
+    font-size: large;
+    height: 90%;
+    overflow: hidden; 
+}
+
+section#corps div#noir section#exercice section#tchat div#discussion p.entreeTchat {
+    color: #D0112B;
+}
+
+/* Hack pour la scrollbar du tchat */
+
+@keyframes nodeInserted {  
+    from { opacity: 0.99; }
+    to { opacity: 1; }  
+}
+
+@-moz-keyframes nodeInserted {  
+    from { opacity: 0.99; }
+    to { opacity: 1; }
+}
+
+@-webkit-keyframes nodeInserted {  
+    from { opacity: 0.99; }
+    to { opacity: 1; }
+}
+
+@-ms-keyframes nodeInserted {  
+    from { opacity: 0.99; }
+    to { opacity: 1; }
+}
+
+@-o-keyframes nodeInserted {  
+    from { opacity: 0.99; }
+    to { opacity: 1; }
+} 
+
+div#discussion > p {
+    animation-duration: 0.001s;
+    -o-animation-duration: 0.001s;
+    -ms-animation-duration: 0.001s;
+    -moz-animation-duration: 0.001s;
+    -webkit-animation-duration: 0.001s;
+    animation-name: nodeInserted;
+    -o-animation-name: nodeInserted;
+    -ms-animation-name: nodeInserted;        
+    -moz-animation-name: nodeInserted;
+    -webkit-animation-name: nodeInserted;
+}
+
+/* ================================================== */
+/* ====================== 404 ====================== */
+/* ================================================ */
+
+section#corps div#wrapper section#erreur p {
+    color: #231F20;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: sf_shai_fontairegular, serif;
+    text-align: center;
+}
+
+section#corps div#wrapper section#erreur img {
+    display: block;
+    margin: auto;
+}
+
+/* ================================================== */
+/* ===================== Footer ==================== */
+/* ================================================ */
+
+/* ===================== Menu ====================== */
+
+footer {
+    background-color: #A88F66;
+    display: flex;
+    border-top: solid 3px black;
+    border-bottom: solid 3px black;
+    height: 55px;
+}
+
+footer ul:first-of-type {
+    list-style-type: none;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    background-color: #A88F66;
+}
+
+footer ul:first-of-type li {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 3px 0;
+}
+
+footer ul:first-of-type li:after {
+    content: "|";
+}
+
+footer ul:first-of-type li:last-of-type:after {
+    content: "";
+}
+
+footer ul:first-of-type li a {
+    color: black;
+    padding-right: 20px;
+    font-size: medium;
+    font-family: underwood_championregular, sans-serif;
+    font-weight: bold;
+    transition: color .2s ease-out;
+}
+
+footer ul:first-of-type li a:hover {
+    color: white;
+}
+
+footer ul:last-of-type {
+    width: 20%;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul:last-of-type li {
+    margin-left: 10px;
+}
+
+footer ul:last-of-type li a img {
+    height: 40px;
+    vertical-align: middle;
+}
+
+/* ================= Pages du footer ================= */
+
+section#corps div#wrapper .pied-de-page {
+    width: 85%;
+    margin: auto;
+}
+
+section#corps div#wrapper .pied-de-page h3 {
+    margin-top: 15px;
+}
+
+section#corps div#wrapper section#mentions-legales address {
+    display: block;
+    margin: 15px 0;
+}
+
+section#corps div#wrapper section#plan-du-site h2 {
+    text-align: center;
+}
+
+section#corps div#wrapper section#plan-du-site a {
+    color: white;
+}
+
+section#corps div#wrapper section#plan-du-site a:hover {
+    text-decoration: underline;
+}
+
+section#corps div#wrapper section#plan-du-site ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+section#corps div#wrapper section#plan-du-site > ul > li {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 15px;
+    background-color: black;
+    vertical-align: text-top;
+}
+
+section#corps div#wrapper section#plan-du-site > ul > li > a {
+    font-weight: bold;
+}
+
+section#corps div#wrapper section#plan-du-site ul > li > ul > li:first-of-type {
+    margin-top: 15px;
+}
+
+section#corps div#wrapper section#classement {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+section#corps div#wrapper section#classement h2 {
+    margin-bottom: 10px;
+}
+
+section#corps div#wrapper section#classement div#periodes-classement ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+section#corps div#wrapper section#classement div#periodes-classement ul li a {
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: solid 2px white;
+    border-radius: 5px;
+    transition: background-color .3s linear;
+}
+
+section#corps div#wrapper section#classement div#periodes-classement ul li a:hover {
+    color: black;
+    background-color: white;
+    border: solid 2px black;
+}
+
+section#corps div#wrapper section#classement div#tableaux-classement table {
+    border-collapse: collapse;
+    margin: auto;
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 0 0 3px black;
+}
+
+section#corps div#wrapper section#classement div#tableaux-classement table caption {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    font-family: orchideelightregular, sans-serif;
+}
+
+section#corps div#wrapper section#classement div#tableaux-classement table tr th {
+    color: white;
+    background-color: #D0112B;
+    font-family: sf_shai_fontairegular, sans-serif;
+    font-size: 25px;
+}
+
+section#corps div#wrapper section#classement div#tableaux-classement table tr td {
+    background-color: #E6E2A5;
+}
+
+section#corps div#wrapper section#classement div#tableaux-classement table tr td, th {
+    border: solid 2px black;
+    padding: 15px;
+}
+
+section#corps div#wrapper section#classement div#tableaux-classement table tr td a {
+    color: black;
+    font-weight: bold;
+}

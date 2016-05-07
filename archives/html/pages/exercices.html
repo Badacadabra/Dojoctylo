@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Apprenez à taper au clavier sur Dojoctylo !</title>
+        <link rel="shortcut icon" type="image/png" href="../images/charte-graphique/favicon.png" />
+        <link rel="stylesheet" href="../ui/css/large.css" media="screen" />
+        <link rel="stylesheet" href="../ui/css/medium.css" media="screen and (max-width: 1023px)" />
+        <link rel="stylesheet" href="../ui/css/small.css" media="screen and (max-width: 599px)" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script>
+            $( document ).ready(function(){
+                $( "#zone-saisie" ).keypress(function(event){
+                    console.log(String.fromCharCode(event.which));
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <a href="index.html" title="Accueil" id="logo">
+                <img src="../images/charte-graphique/clavier.png" alt="" />
+            </a>
+            <h1>Dojoctylo</h1>
+            <a href="connexion.html">Connexion / Inscription</a>
+        </header>
+        <nav id="top-menu">
+            <div class="paper"></div>
+            <ul>
+                <li><a href="apprendre.html">Apprendre</a></li>
+                <li><a href="pratiquer.html">Pratiquer</a></li>
+                <li><a href="affronter.html">Affronter</a></li>
+            </ul>
+            <div class="paper"></div>
+        </nav>
+        <section id="corps">
+            <div id="noir">
+                <section id="exercice" class="padding">
+                    <h2>Exercices</h2>
+                    <div id="a-taper">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tristique massa eget neque sagittis, sed cursus justo pretium. Phasellus fringilla turpis vitae quam gravida aliquam. Aliquam volutpat maximus lectus, non auctor mauris luctus non. Quisque pharetra, neque ac suscipit sagittis, ligula erat rhoncus turpis, sed vestibulum eros lorem et nisi. Phasellus eu neque ac nulla varius tempor. Proin suscipit odio lectus, eu imperdiet ligula tempor bibendum. Curabitur condimentum vehicula nibh, a molestie nulla mattis sit amet. Pellentesque ante nunc, eleifend eget cursus eu, consectetur ac diam. Integer molestie porta est, quis mollis ex. Fusce fermentum lacus eget viverra pellentesque. Suspendisse eget dolor nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </div>
+                    <textarea id="zone-saisie"></textarea>
+                </section>
+            </div>
+        </section>
+        <footer>
+            <ul>
+                <li><a href="mentions-legales.html">Mentions légales</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="mailto:21411850@etu.unicaen.fr">Contact</a></li>
+                <li><a href="plan-du-site.html">Plan du site</a></li>
+                <li><a href="profil.html">Mon compte</a></li>
+            </ul>
+            <ul>
+                <li><a href="#"><img src="../images/charte-graphique/icons_golden_64x64/facebook_64.png" /></a></li>
+                <li><a href="#"><img src="../images/charte-graphique/icons_golden_64x64/twitter_64.png" /></a></li>
+                <li><a href="#"><img src="../images/charte-graphique/icons_golden_64x64/mail-1_64.png" /></a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

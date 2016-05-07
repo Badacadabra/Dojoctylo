@@ -1,0 +1,136 @@
+/* ================================================== */
+/* ===================== Reset ===================== */
+/* ================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ================================================== */
+/* ===================== Global ==================== */
+/* ================================================ */
+
+p {
+    margin: 10px 0;
+}
+
+body {
+    background-image: url('../images/charte-graphique/patterns/jpgs/webtreats-paper-pattern-2-brown.jpg');
+}
+
+section#corps {
+/*
+    background: url('../images/dragon-42984_640.png') no-repeat center;
+*/
+}
+
+.contenu {
+    padding: 20px;
+    background-color: #E6E2A5;
+    border-radius: 10px;
+    box-shadow: 0 0 15px black;
+}
+
+.contenu h2 {
+    color: #582800;
+    margin-bottom: 15px;
+}
+
+.padding {
+    padding: 50px 0;
+}
+
+.bambou {
+    min-height: 533px;
+    background-image: url('../images/charte-graphique/texture-bambou.jpg');
+}
+
+.italique {
+    font-style: italic;
+}
+
+.gras {
+    font-weight: bold;
+}
+
+/* ================================================== */
+/* ==================== Polices ==================== */
+/* ================================================ */
+
+@font-face {
+    font-family: 'underwood_championregular';
+    src: url('../polices/webfontkit-20150308-123622/underwood_champion-webfont.eot');
+    src: url('../polices/webfontkit-20150308-123622/underwood_champion-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../polices/webfontkit-20150308-123622/underwood_champion-webfont.woff2') format('woff2'),
+         url('../polices/webfontkit-20150308-123622/underwood_champion-webfont.woff') format('woff'),
+         url('../polices/webfontkit-20150308-123622/underwood_champion-webfont.ttf') format('truetype'),
+         url('../polices/webfontkit-20150308-123622/underwood_champion-webfont.svg#underwood_championregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sf_shai_fontairegular';
+    src: url('../polices/webfontkit-20150309-152942/SF_Shai_Fontai-webfont.eot');
+    src: url('../polices/webfontkit-20150309-152942/SF_Shai_Fontai-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../polices/webfontkit-20150309-152942/SF_Shai_Fontai-webfont.woff2') format('woff2'),
+         url('../polices/webfontkit-20150309-152942/SF_Shai_Fontai-webfont.woff') format('woff'),
+         url('../polices/webfontkit-20150309-152942/SF_Shai_Fontai-webfont.ttf') format('truetype'),
+         url('../polices/webfontkit-20150309-152942/SF_Shai_Fontai-webfont.svg#sf_shai_fontairegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'orchideelightregular';
+    src: url('../polices/webfontkit-20150309-190410/OrchideeLight-webfont.eot');
+    src: url('../polices/webfontkit-20150309-190410/OrchideeLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../polices/webfontkit-20150309-190410/OrchideeLight-webfont.woff2') format('woff2'),
+         url('../polices/webfontkit-20150309-190410/OrchideeLight-webfont.woff') format('woff'),
+         url('../polices/webfontkit-20150309-190410/OrchideeLight-webfont.ttf') format('truetype'),
+         url('../polices/webfontkit-20150309-190410/OrchideeLight-webfont.svg#orchideelightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ================================================== */
+/* ===================== Header ==================== */
+/* ================================================ */
+
+header {
+    color: white;
+    height: 55px;
+    background-color: black;
+}
+
+header h1 {
+    display: inline-block;
+    font-size: 30px;
+    padding-top: 10px;
+    margin-left: 125px;
+    font-family: underwood_championregular, sans-serif;
+}
+
+header #logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+header #logo img {
+    height: 35px;
+}
+
+header a:last-of-type {
+    font-weight: bold;
+    color: white;
+    float: right;
+    font-variant: small-caps;
+    posi

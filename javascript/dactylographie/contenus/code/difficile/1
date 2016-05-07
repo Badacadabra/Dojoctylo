@@ -1,0 +1,26 @@
+<div id="infos">Vim, regexp.c</div>
+<div id="contenu">#define OP(p)     ((int)*(p))
+#define NEXT(p)     (((*((p) + 1) & 0377) << 8) + (*((p) + 2) & 0377))
+#define OPERAND(p)  ((p) + 3)
+/* Obtain an operand that was stored as four bytes, MSB first. */
+#define OPERAND_MIN(p)  (((long)(p)[3] << 24) + ((long)(p)[4] << 16) \
+            + ((long)(p)[5] << 8) + (long)(p)[6])
+/* Obtain a second operand stored as four bytes. */
+#define OPERAND_MAX(p)  OPERAND_MIN((p) + 4)
+/* Obtain a second single-byte operand stored after a four bytes operand. */
+#define OPERAND_CMP(p)  (p)[7]
+
+/*
+ * Utility definitions.
+ */
+#define UCHARAT(p)  ((int)*(char_u *)(p))
+
+/* Used for an error (down from) vim_regcomp(): give the error message, set
+ * rc_did_emsg and return NULL */
+#define EMSG_RET_NULL(m) { EMSG(m); rc_did_emsg = TRUE; return NULL; }
+#define EMSG_M_RET_NULL(m, c) { EMSG2(m, c ? "" : "\\"); rc_did_emsg = TRUE; return NULL; }
+#define EMSG_RET_FAIL(m) { EMSG(m); rc_did_emsg = TRUE; return FAIL; }
+#define EMSG_ONE_RET_NULL EMSG_M_RET_NULL(_("E369: invalid item in %s%%[]"), reg_magic == MAGIC_ALL)
+
+#define MAX_LIMIT   (32767L << 16L)
+</div>

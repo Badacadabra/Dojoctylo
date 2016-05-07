@@ -1,0 +1,195 @@
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script>
+            const RETOUR = 8;
+            const ENTREE = 13;
+
+            var id = 0;
+            var scroll = 0;
+            var secondes = 60;
+            var nbErreurs = 0;
+            var textes = ["1.html", "2.html", "3.html"];
+            var texteCourant;
+            var timerActif = false;
+            var timerEnd = false;
+            var timerIntervalle;
+            var accent = false;
+            var caractereAccentue;
+            var caracteresExclus = [
+                                    0, // Tabulation
+                                    8, // Retour
+                                    13 // Entrée
+                                    ];
+
+            $( document ).ready(function(){
+                // Préparation de l'exercice
+                selectionAleatoire();
+                chargementTexte();
+                reset();
+                $( "#performance #temps" ).html( secondes );
+
+                $( "#bouton" ).click(function() {
+                    reset();
+                    selectionAleatoire();
+                    chargementTexte();
+                    $( "#performance #temps" ).html( secondes );
+                    $( "#a-taper" ).scrollTop( 0 );
+                });
+
+                // Gestion normale de la saisie
+                $( "#zone-saisie" ).keypress(function(event){
+                    if (accent == false) {
+                        if (timerActif == false) {
+                            timer();
+                            timerActif = true;
+                        }
+                        if (timerEnd !== true) {
+                            var codeCaractere = event.which;
+                            var caractereSaisi = String.fromCharCode(codeCaractere);
+                            var caractereASaisir = caractereATaper(id);
+                            console.log(caractereSaisi);
+                            if (caractereSaisi == caractereASaisir) { // Saisie OK
+                                caracteresValides(id);
+                                id++;
+                                caractereATaper(id);
+                            } else { // Faute de frappe
+                                if ($.inArray(codeCaractere, caracteresExclus) == -1) {
+                                    erreur(id);
+                                    id++;
+                                    nbErreurs++;
+                                }
+                                if (codeCaractere == RETOUR && id > 0) { // Correction
+                                    correction(id);
+                                    id--;
+                                    caractereATaper(id);
+                                }
+                                if (codeCaractere == ENTREE && id > 0) { // Autoscroll
+                                    scroll = scroll + $( "#a-taper" ).height() + 10;
+                                    $( "#a-taper" ).scrollTop( scroll );
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Gestion de la saisie des caractères spéciaux propres à la langue française
+                /* $( "#zone-saisie" ).keyup(function(event){
+                    if (event.which == 0 || event.which == 219) { // Touche "^" sous Firefox et Chrome
+                        accent = true;
+                        console.log("OK");
+                    }
+                }); */
+
+                /* $( "#zone-saisie" ).keydown(function(event){
+                    if (event.which == 229) console.log("Yes!");
+                    if (accent) {
+                        var codeCaractere = event.which;
+                        var caractereSaisi = String.fromCharCode(codeCaractere);
+                        var caractereASaisir = caractereATaper(id);
+                        switch(codeCaractere) {
+                            case 69: // e
+                                caractereAccentue = String.fromCharCode(234); // ê
+                                console.log(caractereAccentue);
+                                caractereSaisi = caractereAccentue;
+                                if (caractereSaisi == caractereASaisir) { // Saisie OK
+                                    caracteresValides(id);
+                                    id++;
+                                    caractereATaper(id);
+                                }
+                                break;
+                        }
+                        accent = false;
+                    }
+                }); */
+
+            });
+
+            // Fonctions diverses
+
+            // Compte à rebours d'une minute
+            function timer() {
+                timerIntervalle = setInterval(function() {
+                    if (secondes > 0) {
+                        secondes--;
+                        $( "#performance #temps" ).html( secondes );
+                    }
+                }, 1000);
+                setTimeout(function() {
+                    timerEnd = true;
+                    $( "#zone-saisie" ).prop("readonly", true);
+                    $( "#performance #vitesse" ).html( "Vitesse : " + id / 5 + " MPM" );
+                    $( "#performance #precision" ).html( "Précision : " + Math.round(100 - (nbErreurs / id) * 100) + " %" );
+                }, 60000);
+            }
+
+            // Prochain caractère à taper
+            function caractereATaper(id) {
+                caractereASaisir = $( "#" + id ).text();
+                $( "#" + id ).css( "background-color", "rgba(221, 220, 156, 0.4" );
+                $( "#a-taper" ).css( "border-color", "white");
+                return caractereASaisir;
+            }
+
+            // Validation du caractère saisi
+            function caracteresValides(id) {
+                $( "#" + id ).css( "background-color", "rgba(0, 255, 0, 0.6" );
+                $( "#a-taper" ).css( "border-color", "white");
+            }
+
+            // Gestion des fautes de frappe
+            function erreur(id) {
+                $( "#" + id ).css( "background-color", "#D0112B" );
+                $( "#a-taper" ).css( "border-color", "#D0112B");
+            }
+
+            // Mise à jour du curseur pour la correction
+            function correction(id) {
+                $( "#" + id ).css( "background-color", "black" );
+                $( "#a-taper" ).css( "border-color", "white");
+            }
+
+            // Sélection d'un texte au hasard
+            function selectionAleatoire() {
+                var nbAleatoire = Math.floor(Math.random() * textes.length);
+                texteCourant = textes[nbAleatoire];
+                return texteCourant;
+            }
+
+            // Chargement d'un texte en Ajax
+            function chargementTexte() {
+                $( "#loader" ).show();
+                $( "#source" ).hide();
+                $( "#a-taper" ).load(texteCourant, function() {
+                    $( "#loader" ).hide();
+                    $( "#source" ).show();
+                    $( "#source" ).html($( "#a-taper" ).find( "#infos" ).html());
+                    var texteASaisir = $( "#a-taper" ).find( "p" ).text();
+                    texteASaisir = texteASaisir.replace(/’/g, "'");
+                    $( "#a-taper" ).html( "<span id=\"0\">" + texteASaisir.charAt(0) + "</span>" );
+                    for (var i = 1; i < texteASaisir.length-1; i++) {
+                        $( "#a-taper" ).append( "<span id=\"" + i + "\">" + texteASaisir.charAt(i) + "</span>" );
+                    }
+                    $( "#zone-saisie" ).focus();
+                    caractereATaper(id);
+                    $( "#zone-saisie" ).prop("readonly", false);
+                });
+            }
+
+            // Réinitialisation de la zone de saisie quand l'utilisateur clique sur le bouton
+            function reset() {
+                id = 0;
+                scroll = 0;
+                timerActif = false;
+                timerEnd = false;
+                secondes = 60;
+                clearInterval(timerIntervalle);
+                $( "#vitesse" ).text("");
+                $( "#precision" ).text("");
+                if ($( "#zone-saisie" ).val() != "") {
+                    $( "#zone-saisie" ).val( "" );
+                    var texteASaisir = $( "#a-taper" ).text();
+                    for (var i = 0; i < texteASaisir.length-1; i++) {
+                        $( "#" + i ).css( "background-color", "black" );
+                    }
+                }
+            }
+        </script>
