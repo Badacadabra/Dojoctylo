@@ -1,7 +1,37 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AppBundle:Practice:code{% endblock %}
+{% block title %}
+    Augmentez votre vitesse et votre précision avec des exercices | {{ parent() }}
+{% endblock %}
 
-{% block body %}
-<h1>Welcome to the Practice:code page</h1>
+{% block content %}
+    <div id="noir">
+        <section id="exercice" class="padding">
+            <h2>Code</h2>
+            <div id="top-container">
+                <div id="loader"><img src="{{ asset('img/charte-graphique/ajax-loader.gif') }}" alt="Chargement" /></div>
+                <div id="source"></div>
+            </div>
+            <div id="a-taper"></div>
+            <div id="dactylo">
+                <textarea id="zone-saisie" autofocus></textarea>
+                <button type="button" id="refresh"><img src="{{ asset('img/charte-graphique/favicon.png') }}" alt="Rafraîchir" /></button>
+            </div>
+            <div id="performance">
+                <span id="temps"></span>
+                <span id="vitesse"></span>
+                <span id="precision"></span>
+            </div>
+            <div id="difficulte">
+                <button type="button" id="facile">Facile</button>
+                <button type="button" id="moyen">Moyen</button>
+                <button type="button" id="difficile">Difficile</button>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/dactylographie/entrainement.js') }}"></script>
 {% endblock %}

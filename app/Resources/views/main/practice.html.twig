@@ -8,15 +8,15 @@
             <h2>Pratiquer</h2>
             <nav id="sous-menu">
                 <ul>
-                    <li><a href="index.php?p=pratiquer&amp;m=bases&amp;d=facile" title="Découvrez votre clavier">Bases</a></li>
-                    <li><a href="index.php?p=pratiquer&amp;m=digrammes&amp;d=facile" title="Entraînez-vous sur des séries (récurrentes) de deux lettres">Digrammes</a></li>
-                    <li><a href="index.php?p=pratiquer&amp;m=trigrammes&amp;d=facile" title="Entraînez-vous sur des séries (récurrentes) de trois lettres">Trigrammes</a></li>
-                    <li><a href="index.php?p=pratiquer&amp;m=mots&amp;d=facile" title="Tapez des séries de mots usuels... Ou pas tant que ça !">Mots</a></li>
-                    <li><a href="index.php?p=pratiquer&amp;m=phrases&amp;d=facile" title="Proverbes, pangrammes, phrases célèbres... C'est par ici !">Phrases</a></li>
-                    <li><a href="index.php?p=pratiquer&amp;m=nombres&amp;d=facile" title="Domptez les nombres, avec ou sans pavé numérique !">Nombres</a></li>
-                    <li><a href="index.php?p=pratiquer&amp;m=textes&amp;d=facile" title="Mettez en pratique ce que vous avez appris dans les autres modes">Textes</a></li>
-                    <li><a href="index.php?p=pratiquer&amp;m=code&amp;d=facile" title="Programmeurs, à vos claviers... Êtes-vous prêts à coder ?">Code</a></li>
-                    <li><a href="index.php?p=pratiquer&amp;m=custom&amp;d=facile" title="Ajoutez vos propres textes pour une pratique personnalisée">Sur-mesure</a></li>
+                    <li><a href="{{ path('practice_basics') }}" title="Découvrez votre clavier">Bases</a></li>
+                    <li><a href="{{ path('practice_digrams') }}" title="Entraînez-vous sur des séries (récurrentes) de deux lettres">Digrammes</a></li>
+                    <li><a href="{{ path('practice_trigrams') }}" title="Entraînez-vous sur des séries (récurrentes) de trois lettres">Trigrammes</a></li>
+                    <li><a href="{{ path('practice_words') }}" title="Tapez des séries de mots usuels... Ou pas tant que ça !">Mots</a></li>
+                    <li><a href="{{ path('practice_sentences') }}" title="Proverbes, pangrammes, phrases célèbres... C'est par ici !">Phrases</a></li>
+                    <li><a href="{{ path('practice_numbers') }}" title="Domptez les nombres, avec ou sans pavé numérique !">Nombres</a></li>
+                    <li><a href="{{ path('practice_texts') }}" title="Mettez en pratique ce que vous avez appris dans les autres modes">Textes</a></li>
+                    <li><a href="{{ path('practice_code') }}" title="Programmeurs, à vos claviers... Êtes-vous prêts à coder ?">Code</a></li>
+                    <li><a href="{{ path('practice_custom') }}" title="Ajoutez vos propres textes pour une pratique personnalisée">Sur-mesure</a></li>
                 </ul>
             </nav>
         </section>

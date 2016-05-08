@@ -21,7 +21,14 @@
             </a>
             <h1>Dojoctylo</h1>
             <div id="liensHeader">
-                {% block auth %}{% endblock %}
+                {% block auth %}
+                    {% if app.user %}
+                        <a href="{{ path('logout') }}">| Déconnexion</a>;
+                        <a href="{{ path('profile', {'username': 'badacadabra', 'id': 1 }) }}">| Mon profil</a>\n";
+                    {% else %} 
+                        <a href="{{ path('auth') }}">Connexion / Inscription</a>
+                    {% endif %} 
+                {% endblock %}
             </div>
         </header>
         <nav id="top-menu">
@@ -42,7 +49,7 @@
                 <li><a href="{{ path('faq') }}">FAQ</a></li>
                 <li><a href="mailto:21411850@etu.unicaen.fr">Contact</a></li>
                 <li><a href="{{ path('sitemap') }}">Plan du site</a></li>
-                <li><a href="index.php?p=classement&amp;m=jour">Classement</a></li>
+                <li><a href="{{ path('ranking') }}">Classement</a></li>
             </ul>
             <ul>
                 <li><a href="https://www.facebook.com/" title="Facebook"><img src="{{ asset('img/charte-graphique/icons_golden_64x64/facebook_64.png') }}" alt="Facebook" /></a></li>

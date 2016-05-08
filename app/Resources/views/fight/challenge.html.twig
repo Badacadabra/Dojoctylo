@@ -11,7 +11,7 @@
         </button>
         <input id="pseudo" type="hidden" value="<?php echo $pseudo ?>" />
         <section id="exercice" class="padding">
-            <h2><?php echo $mode; ?></h2>
+            <h2>Défi</h2>
             <div id="top-container">
                 <div id="loader"><img src="images/charte-graphique/ajax-loader.gif" alt="Chargement" /></div>
                 <div id="source"></div>
@@ -38,4 +38,10 @@
             </section>
         </section>
     </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ asset('js/popup/popupConnexion.js') }}"></script>
+    <script src="{{ asset('http://localhost:3000/socket.io/socket.io.js') }}"></script>
+    <script src="{{ asset('js/tchat/tchat.js') }}"></script>
 {% endblock %}

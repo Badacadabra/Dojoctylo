@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+    Oups ! Erreur lors du chargement de la page | {{ parent() }}
+{% endblock %}
+{% block content %}
+    <div id="wrapper" class="padding">
+        <section id="erreur">
+            <p>Maître Taipingu ne comprend pas votre requête...</p>
+            <img src="{{ asset('img/dragon-42984_640.png') }}" alt="Dragon" />
+        </section>
+    </div>
+{% endblock %}

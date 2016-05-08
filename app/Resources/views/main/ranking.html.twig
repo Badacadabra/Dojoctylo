@@ -1,0 +1,75 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Le classement ultime pour les ninjas du clavier | {{ parent() }}    
+{% endblock %}
+
+{% block content %}
+    <div id="wrapper" class="bambou">
+        <section id="classement" class="padding">
+            <div class="bandeau">
+                <h2>Classement</h2>
+                <div id="periodes-classement">
+                    <ul>
+                        <li><a href="index.php?p=classement&amp;m=jour">Jour</a></li>
+                        <li><a href="index.php?p=classement&amp;m=semaine">Semaine</a></li>
+                        <li><a href="index.php?p=classement&amp;m=mois">Mois</a></li>
+                        <li><a href="index.php?p=classement&amp;m=annee">Année</a></li>
+                        <li><a href="index.php?p=classement&amp;m=global">Global</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="tableaux-classement">
+                <table>
+                    <caption>Membres les plus rapides</caption>
+                    <tr>
+                        <th>Rang</th>
+                        <th>Membre</th>
+                        <th>Vitesse (MPM)</th>
+                    </tr>
+                    <?php echo $classementVitesse; ?>
+                </table>
+                <table>
+                    <caption>Membres les plus actifs</caption>
+                    <tr>
+                        <th>Rang</th>
+                        <th>Membre</th>
+                        <th>Nombre de tests</th>
+                    </tr>
+                    <?php echo $classementActivite; ?>
+                </table>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        $( document ).ready(function() {
+            
+            // Effet au survol des lignes du classement
+            $( "tr" ).on("mouseover", function() {
+                $( this ).children().each(function() {
+                    if ($( this ).prop("tagName") !== "TH") {
+                        $( this ).css({"background-color":"#E18681", "cursor":"pointer"});
+                        $( this ).click(function() {
+                            var profil = $( this ).parent().children().eq(1).children().first().attr( "href" );
+                            $( location ).attr('href', profil);
+                        });
+                    }
+                });
+            });
+            
+            // Rétablissement du style par défaut
+            $( "tr" ).on("mouseout", function() {
+                $( this ).children().each(function() {
+                    if ($( this ).prop("tagName") !== "TH") {
+                        $( this ).css("background-color", "#E6E2A5");
+                    }
+                });
+            });
+            
+        });
+    </script>
+{% endblock %}

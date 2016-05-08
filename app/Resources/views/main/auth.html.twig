@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Se connecter ou s'inscrire | {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <section id="login-signup" class="padding">
+        <section id="login">
+            <h2>Connexion</h2>
+            <form method="post" action="index.php?p=authentification&amp;a=connexion">
+                <input type="text" placeholder="Votre pseudo ou e-mail" name="loginConnexion" class="mail" />
+                    <div class="erreursFormulaires"></div>
+                <input type="password" placeholder="Votre mot de passe" name="mdpConnexion" />
+                    <div class="erreursFormulaires"><?php echo $erreur; ?></div>
+                <input type="submit" value="Connexion" />
+            </form>
+        </section>
+        <img src="{{ asset('img/charte-graphique/ninjactylo.png') }}" alt="Ninjactylo" />
+        <section id="signup">
+            <h2>Inscription</h2>
+            <form method="post" action="index.php?p=authentification&amp;a=inscription">
+                <input type="text" placeholder="Votre pseudo" name="pseudoInscription" maxlength="20" />
+                    <div class="erreursFormulaires"></div>
+                <input type="text" placeholder="Votre e-mail" name="mailInscription" class="mail" />
+                    <div class="erreursFormulaires"></div>
+                <input type="password" placeholder="Votre mot de passe" name="mdpInscription" />
+                    <div class="erreursFormulaires"></div>
+                <input type="submit" value="Inscription" />
+            </form>
+        </section>
+    </section>
+    <?php echo $popup; ?>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/validForm/validForm.js') }}"></script>
+    <script>
+        // Fermeture de la pop-up d'au revoir quand l'utilisateur se déconnecte
+        $( document ).ready(function() {
+            $( "#fondu" ).fadeIn();
+            $( "button#ok" ).click(function() {
+                $( "#fondu" ).fadeOut();
+                $( ".pop-up" ).fadeOut();
+            });
+        });
+    </script>
+{% endblock %}

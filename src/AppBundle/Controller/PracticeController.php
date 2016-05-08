@@ -96,4 +96,30 @@ class PracticeController extends Controller
             // ...
         ));
     }
+
+    /**
+     * @Route("/pratiquer/sur-mesure/ajouter", name="add_practice_custom")
+     */
+    public function addCustomAction()
+    {
+
+    }
+
+    /**
+     * @Route("/pratiquer/sur-mesure/supprimer", name="remove_practice_custom")
+     */
+    public function removeCustomAction()
+    {
+
+    }
+
+    /**
+     * @Route("/pratiquer/sur-mesure/gerer", name="manage_practice_custom")
+     */
+    public function manageCustomAction()
+    {
+        return $this->render(':practice:manage_custom.html.twig', array(
+            // ...
+        ));
+    }
 }

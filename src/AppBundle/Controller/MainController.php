@@ -17,6 +17,14 @@ class MainController extends Controller
     }
 
     /**
+     * @Route("/authentification", name="auth")
+     */
+    public function authAction()
+    {
+        return $this->render(':main:auth.html.twig');
+    }
+
+    /**
      * @Route("/apprendre", name="learn")
      */
     public function learnAction()
@@ -41,6 +49,14 @@ class MainController extends Controller
     }
 
     /**
+     * @Route("/recompenses", name="trophies")
+     */
+    public function trophiesAction()
+    {
+        return $this->render(':main:trophies.html.twig');
+    }
+
+    /**
      * @Route("/mentions-legales", name="legal_notice")
      */
     public function legalNoticeAction()
@@ -57,10 +73,28 @@ class MainController extends Controller
     }
 
     /**
-     * @Route("/sitemap", name="sitemap")
+     * @Route("/plan-du-site", name="sitemap")
      */
     public function sitemapAction()
     {
         return $this->render(':main:sitemap.html.twig');
+    }
+
+    /**
+     * @Route("/classement", name="ranking")
+     */
+    public function rankingAction()
+    {
+        return $this->render(':main:ranking.html.twig');
+    }
+
+    /**
+     * @Route("/profil/{username}", name="profile")
+     */
+    public function profileAction($username)
+    {
+        return $this->render(':main:profile.html.twig', array(
+            'username' => $username 
+        ));
     }
 }

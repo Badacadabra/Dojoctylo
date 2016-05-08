@@ -1,0 +1,238 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+    Vos efforts au sein du dojo méritent des récompenses | {{ parent() }}
+{% endblock %}
+{% block content %}
+    <section id="recompenses">
+        <ul>
+            <li>
+                <h3 id="debutant">Débutant</h3>
+                <ul>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/debutant/bambou.png') }}" alt="Bambou" />
+                            <figcaption>Bambou</figcaption>
+                        </figure>
+                        <p class="description">Vous avez créé un compte sur Dojoctylo</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/debutant/bonsai.png') }}" alt="Bonsaï" />
+                            <figcaption>Bonsaï</figcaption>
+                        </figure>
+                        <p class="description">Vous avez complété votre profil</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/debutant/bol-vide.png') }}" alt="Bol vide" />
+                            <figcaption>Bol vide</figcaption>
+                        </figure>
+                        <p class="description">Vous avez lu votre premier tuto de base</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/debutant/soupe-miso.png') }}" alt="Soupe miso" />
+                            <figcaption>Soupe miso</figcaption>
+                        </figure>
+                        <p class="description">Vous avez fait votre premier exercice de base</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/debutant/sushi.png') }}" alt="Sushi" />
+                            <figcaption>Sushi</figcaption>
+                        </figure>
+                        <p class="description">Vous avez dépassé une heure de connexion en une session</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3 id="entrainement">Entraînement</h3>
+                <ul>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/entrainement/nunchaku.png') }}" alt="Nunchaku" />
+                            <figcaption>Nunchaku</figcaption>
+                        </figure>
+                        <p class="description">Vous avez passé plus de 6 heures à vous entraîner</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/entrainement/shuriken.png') }}" alt="Shuriken" />
+                            <figcaption>Shuriken</figcaption>
+                        </figure>
+                        <p class="description">Vous avez passé plus de 12 heures à vous entraîner</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/entrainement/tanto.png') }}" alt="Tantō" />
+                            <figcaption>Tantō</figcaption>
+                        </figure>
+                        <p class="description">Vous avez passé plus de 24 heures à vous entraîner</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/entrainement/sai.png') }}" alt="Saï" />
+                            <figcaption>Saï</figcaption>
+                        </figure>
+                        <p class="description">Vous avez passé plus de 48 heures à vous entraîner</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/entrainement/katana-saya.png') }}" alt="Katana" />
+                            <figcaption>Katana</figcaption>
+                        </figure>
+                        <p class="description">Vous avez passé plus de 72 heures à vous entraîner</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3 id="vitesse">Vitesse</h3>
+                <ul>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/vitesse/karateka.png') }}" alt="Karatéka" />
+                            <figcaption>Karatéka</figcaption>
+                        </figure>
+                        <p class="description">Vous avez atteint 50 MPM au test de dactylo</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/vitesse/espion.png') }}" alt="Espion" />
+                            <figcaption>Espion</figcaption>
+                        </figure>
+                        <p class="description">Vous avez atteint 70 MPM au test de dactylo</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/vitesse/guerrier.png') }}" alt="Guerrier" />
+                            <figcaption>Guerrier</figcaption>
+                        </figure>
+                        <p class="description">Vous avez atteint 90 MPM au test de dactylo</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/vitesse/assassin.png') }}" alt="Assassin" />
+                            <figcaption>Assassin</figcaption>
+                        </figure>
+                        <p class="description">Vous avez atteint 110 MPM au test de dactylo</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/vitesse/legende.png') }}" alt="Légende" />
+                            <figcaption>Légende</figcaption>
+                        </figure>
+                        <p class="description">Vous avez atteint 130 MPM au test de dactylo</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3 id="competition">Compétition</h3>
+                <ul>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/competition/defense.png') }}" alt="Défense" />
+                            <figcaption>Défense</figcaption>
+                        </figure>
+                        <p class="description">Vous avez disputé au moins 10 compétitions</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/competition/duel.png') }}" alt="Duel" />
+                            <figcaption>Duel</figcaption>
+                        </figure>
+                        <p class="description">Vous avez disputé au moins 50 compétitions</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/competition/melee.png') }}" alt="Mêlée" />
+                            <figcaption>Mêlée</figcaption>
+                        </figure>
+                        <p class="description">Vous avez disputé au moins 100 compétitions</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/competition/pluie-shurikens.png') }}" alt="Pluie de shurikens" />
+                            <figcaption>Pluie de shurikens</figcaption>
+                        </figure>
+                        <p class="description">Vous avez disputé au moins 200 compétitions</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/competition/equipe.png') }}" alt="Révolution" />
+                            <figcaption>Révolution</figcaption>
+                        </figure>
+                        <p class="description">Vous avez disputé au moins 300 compétitions</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3 id="prestige">Prestige</h3>
+                <ul>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/prestige/ninja-volant.png') }}" alt="Ninja volant" />
+                            <figcaption>Ninja volant</figcaption>
+                        </figure>
+                        <p class="description">Vous avez essayé tous les types d'exercices en facile, moyen, et difficile</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/prestige/reseau-ninja.png') }}" alt="Réseau ninja" />
+                            <figcaption>Réseau ninja</figcaption>
+                        </figure>
+                        <p class="description">Vous avez invité au moins 10 amis à rejoindre Dojoctylo</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/prestige/ninja-superstar.png') }}" alt="Superstar" />
+                            <figcaption>Superstar</figcaption>
+                        </figure>
+                        <p class="description">Vous êtes membre depuis plus d'un an</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/prestige/ninja-shaman.png') }}" alt="Shaman" />
+                            <figcaption>Shaman</figcaption>
+                        </figure>
+                        <p class="description">Vous avez gagné plus de 300 compétitions</p>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="{{ asset('img/recompenses/prestige/maitre-dragon.png') }}" alt="Maître dragon" />
+                            <figcaption>Maître dragon</figcaption>
+                        </figure>
+                        <p class="description">Vous avez réussi à obtenir toutes les autres récompenses de Dojoctylo</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        function description(selecteurCss, position, chaine, ancre) {
+            $( "section#corps section#recompenses ul li:" + selecteurCss + " ul li" ).mouseover(function() {
+                $( "section#corps section#recompenses h3" ).eq(position).text( $( this ).find( "p" ).text() ).css("color", "#D0112B");
+            });
+            $( "section#corps section#recompenses ul li:" + selecteurCss + " ul li" ).mouseout(function() {
+                $( "section#corps section#recompenses h3" ).eq(position).text( chaine ).css("color", "white");
+            });
+            $( "section#corps section#recompenses ul li:" + selecteurCss + " ul li" ).click(function() {
+                $('html,body').animate({scrollTop: $( ancre ).offset().top}, 300);
+            });
+        }
+        $( document ).ready(function() {
+            // Débutant
+            description("first-of-type", 0, "Débutant", "#debutant");
+            // Entraînement
+            description("nth-of-type(2)", 1, "Entraînement", "#entrainement");
+            // Vitesse
+            description("nth-of-type(3)", 2, "Vitesse", "#vitesse");
+            // Compétition
+            description("nth-of-type(4)", 3, "Compétition", "#competition");
+            // Prestige
+            description("last-of-type", 4, "Prestige", "#prestige");
+        });
+    </script>
+{% endblock %}
