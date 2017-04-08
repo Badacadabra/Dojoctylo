@@ -1,0 +1,23 @@
+<div id="wrapper" class="bambou">
+  <section id="gestionExercices" class="padding liste">
+    <div class="bandeau">
+      <h2>Vos exercices personnalisés</h2>
+      <p class="italique">&laquo; Voler de ses propres ailes est un premier pas vers l'accomplissement. &raquo; &mdash; <span class="gras">Maître Taipingu</span></p>
+    </div>
+    <ol>
+      <% textesPerso.foreach(function(textePerso) { %>
+      <li>
+        <%= textePerso.infos %>
+        <a href=<% "/pratiquer/custom/gerer/modifier/" + textePerso.id %>><img src="images/charte-graphique/icones/divers/edit.png" alt="Modifier" class="edit" title="Modifier"></a>
+        <a href=<% "/pratiquer/custom/gerer/supprimer/" + textePerso.id %> class="supprimer"><img src="images/charte-graphique/icones/divers/croix-rouge.png" alt="Supprimer" title="Supprimer"></a>
+      </li>
+      <% } %>
+    </ol>
+  </section>
+  <div class="pop-up">
+    <p>Voulez-vous vraiment supprimer cet exercice ?</p>
+    <button id="oui">Oui</button>
+    <button id="non">Non</button>
+  </div>
+  <div id="fondu"></div>
+</div>

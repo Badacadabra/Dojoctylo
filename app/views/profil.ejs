@@ -1,0 +1,98 @@
+<div id="wrapper" class="padding">
+  <section id="profil">
+    <section id="infos">
+      <div id="presentation" class="contenu">
+        <h2><%= pseudo %></h2>
+        <a href="https://fr.gravatar.com/" target="_blank">
+          <img src="<%= gravatar %>" alt="<%= pseudo %>" title="<%= messagePhoto %>">
+        </a>
+        <div><%= description %></div>
+        <span><%= boutonModif %></span>
+      </div>
+      <div id="compte-rendu" class="contenu">
+        <h3>Compte rendu d'activité</h3>
+        <p><span class="gras">Inscription</span><%= dateInscription %></p>
+        <hr>
+        <p><span class="gras">Entraînement</span><%= tempsEntrainement %></p>
+        <hr>
+        <p><span class="gras">Tests</span><%= nbTests %></p>
+        <hr>
+        <p><span class="gras">Compétitions</span>N/A</p>
+        <hr>
+        <p><span class="gras">Amis</span>N/A</p>
+        <hr>
+        <p><span class="gras">Filleuls</span><%= nbFilleuls %></p>
+        <hr>
+        <p><span class="gras">Record</span><%= meilleurScore %> MPM</p>
+      </div>
+    </section>
+    <section id="formulaireProfil">
+      <form method="post" action="<%= action %>">
+        <button id="croix" title="Fermer" type="button"><img src="images/charte-graphique/icones/divers/croix-rouge.png" alt="Fermer" /></button>
+        <h3>Modification du profil</h3>
+        <fieldset>
+          <input type="text" name="pseudoProfil" placeholder="Entrez votre nouveau pseudo (facultatif)" />
+              <div class="erreursFormulaires"></div>
+          <input type="text" name="mailProfil" placeholder="Entrez votre nouvelle adresse e-mail (facultatif)" />
+              <div class="erreursFormulaires"></div>
+          <input type="password" name="mdpProfil" placeholder="Entrez votre nouveau mot de passe (facultatif)" />
+              <div class="erreursFormulaires"></div>
+          <textarea id="descriptionProfil" name="descriptionProfil" class="ckeditor" placeholder="Vous pouvez modifier votre description ici..." title="test"></textarea>
+              <div id="erreurCkeditor" class="erreursFormulaires"></div>
+          <input type="submit" value="Valider" />
+        </fieldset>
+      </form>
+    </section>
+    <aside id="stats">
+      <section>
+        <h3>Mes derniers scores</h3>
+        <div id="placeholder"></div>
+      </section>
+      <section>
+        <h3>Mes récompenses &amp distinctions</h3>
+        <div class="trophees">
+          <h4>Débutant</h4>
+          <img src="<%= imageBambou %>" alt="<%= bambou %>" title="<%= bambou %>" />
+          <img src="<%= imageBonsai %>" alt="<%= bonsai %>" title="<%= bonsai %>" />
+          <img src="<%= imageBolVide %>" alt="<%= bolVide %>" title="<%= bolVide %>" />
+          <img src="<%= imageSoupeMiso %>" alt="<%= soupeMiso %>" title="<%= soupeMiso %>" />
+          <img src="<%= imageSushi %>" alt="<%= sushi %>" title="<%= sushi %>" />
+        </div>
+        <div class="trophees">
+          <h4>Entraînement</h4>
+          <img src="<%= imageNunchaku %>" alt="<%= nunchaku %>" title="<%= nunchaku %>" />
+          <img src="<%= imageShuriken %>" alt="<%= shuriken %>" title="<%= shuriken %>" />
+          <img src="<%= imageTanto %>" alt="<%= tanto %>" title="<%= tanto %>" />
+          <img src="<%= imageSai %>" alt="<%= sai %>" title="<%= sai %>" />
+          <img src="<%= imageKatana %>" alt="<%= katana %>" title="<%= katana %>" />
+        </div>
+        <div class="trophees">
+          <h4>Vitesse</h4>
+          <img src="<%= imageKarateka %>" alt="<%= karateka %>" title="<%= karateka %>" />
+          <img src="<%= imageEspion %>" alt="<%= espion %>" title="<%= espion %>" />
+          <img src="<%= imageGuerrier %>" alt="<%= guerrier %>" title="<%= guerrier %>" />
+          <img src="<%= imageAssassin %>" alt="<%= assassin %>" title="<%= assassin %>" />
+          <img src="<%= imageLegende %>" alt="<%= legende %>" title="<%= legende %>" />
+        </div>
+        <div class="trophees">
+          <h4>Compétition</h4>
+          <img src="<%= imageDefense %>" alt="<%= defense %>" title="<%= defense %>" />
+          <img src="<%= imageDuel %>" alt="<%= duel %>" title="<%= duel %>" />
+          <img src="<%= imageMelee %>" alt="<%= melee %>" title="<%= melee %>" />
+          <img src="<%= imagePluieDeShurikens %>" alt="<%= pluieDeShurikens %>" title="<%= pluieDeShurikens %>" />
+          <img src="<%= imageEquipe %>" alt="<%= revolution %>" title="<%= revolution %>" />
+        </div>
+        <div class="trophees">
+          <h4>Prestige</h4>
+          <img src="<%= imageNinjaVolant %>" alt="<%= ninjaVolant %>" title="<%= ninjaVolant %>" />
+          <img src="<%= imageReseauNinja %>" alt="<%= reseauNinja %>" title="<%= reseauNinja %>" />
+          <img src="<%= imageNinjaSuperstar %>" alt="<%= superstar %>" title="<%= superstar %>" />
+          <img src="<%= imageNinjaShaman %>" alt="<%= shaman %>" title="<%= shaman %>" />
+          <img src="<%= imageMaitreDragon %>" alt="<%= maitreDragon %>" title="<%= maitreDragon %>" />
+        </div>
+        <a href="/recompenses">Description de toutes les récompenses et distinctions</a>
+      </section>
+    </aside>
+  </section>
+  <div id="fondu"></div>
+</div>
