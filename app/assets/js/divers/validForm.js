@@ -168,7 +168,7 @@ $( document ).ready(function() {
             contenu.css({ "background-color":"white", "border-color":"white" });
             contenu.next().text( "" );
         }
-        
+
         // Validation du mode de difficulté (facile, moyen, difficile)
         var difficulte = $( "fieldset input[type='radio']:checked" );
         if (difficulte.length == 0) {
@@ -178,7 +178,7 @@ $( document ).ready(function() {
         } else {
             $( "fieldset label" ).last().next().text( "" );
         }
-        
+
     });
 
 });

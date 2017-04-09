@@ -3,27 +3,27 @@ $( document ).ready(function() {
     // On active ou désactive le tchat quand l'utilisateur clique sur le bouton
     var tchatActif = false;
     $( "button#activerTchat" ).click(function() {
-        
+
         var socket = io.connect("http://localhost:3000");
         var pseudo = $( "#pseudo" ).val();
-        
+
         // Si le tchat n'est pas actif, on l'active
         if (!tchatActif) {
             tchatActif = true;
             $( "section#tchat" ).fadeIn();
-    
+
             // Gestion du tchat
             function chat(room) {
                 socket.emit("nouveau_client_" + room, pseudo);
-                
+
                 socket.on("nouveau_client_" + room, function(message) {
                     $( "#tchat #discussion" ).prepend( "<p class=\"entreeTchat\">" + message + "</p>" );
                 });
-                
+
                 socket.on("message_" + room, function(message) {
                     $( "#tchat #discussion" ).prepend( "<p>" + message + "</p>" );
                 });
-                
+
                 $(function() {
                     $( "#tchat #envoyer" ).click(function () {
                         var message = $( "#tchat #message" ).val();
@@ -32,7 +32,7 @@ $( document ).ready(function() {
                     });
                 });
             }
-                
+
             // Tchat privé
             if (window.location.search.indexOf("m=prive") > -1) {
                 chat("prive");
@@ -41,15 +41,15 @@ $( document ).ready(function() {
             if (window.location.search.indexOf("m=public") > -1) {
                 chat("public");
             }
-            
+
             $( "section#tchat" ).draggable({ scroll: false });
             $( "#tchat #message" ).focus();
-            
+
             // Hack pour avoir une scrollbar fonctionnelle dans le tchat
             var insertListener = function(event) {
                 if (event.animationName == "nodeInserted") {
                     if ($( "div#discussion p" ).length == 10) {
-                        $( "div#discussion" ).mCustomScrollbar({ 
+                        $( "div#discussion" ).mCustomScrollbar({
                             theme: "dojoctylo"
                         });
                     }
@@ -75,5 +75,5 @@ $( document ).ready(function() {
         }
 
     });
-    
+
 });
