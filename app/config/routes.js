@@ -59,19 +59,19 @@ module.exports.routes = {
 
   // Pratiquer
   'GET /pratiquer': { view: 'pratiquer' },
-  'GET /pratiquer/bases/facile': { view: 'exercice' },
-  'GET /pratiquer/digrammes/facile': { view: 'exercice' },
-  'GET /pratiquer/trigrammes/facile': { view: 'exercice' },
-  'GET /pratiquer/mots/facile': { view: 'exercice' },
-  'GET /pratiquer/phrases/facile': { view: 'exercice' },
-  'GET /pratiquer/code/facile': { view: 'exercice' },
-  'GET /pratiquer/custom/facile': { view: 'exercice' },
+  'GET /pratiquer/bases/facile': { view: 'exercice', locals: { mode: 'Bases' } },
+  'GET /pratiquer/digrammes/facile': { view: 'exercice', locals: { mode: 'Digrammmes' } },
+  'GET /pratiquer/trigrammes/facile': { view: 'exercice', locals: { mode: 'Trigrammes' } },
+  'GET /pratiquer/mots/facile': { view: 'exercice', locals: { mode: 'Mots' } },
+  'GET /pratiquer/phrases/facile': { view: 'exercice', locals: { mode: 'Phrases' } },
+  'GET /pratiquer/code/facile': { view: 'exercice', locals: { mode: 'Code' } },
+  'GET /pratiquer/custom/facile': { view: 'exercicePerso', locals: { mode: 'Custom' } },
 
   // Affronter
   'GET /affronter': { view: 'affronter' },
-  'GET /affronter/solo': { view: 'exercice' },
-  'GET /affronter/prive': { view: 'exercice' },
-  'GET /affronter/public': { view: 'exercice' },
+  'GET /affronter/solo': { view: 'exercice', locals: { mode: 'Solo'} },
+  'GET /affronter/prive': { view: 'competition', locals: { mode: 'Privé' } },
+  'GET /affronter/public': { view: 'competition', locals: { mode: 'Public' } },
 
   /* ========== Footer ========== */
 
@@ -83,6 +83,7 @@ module.exports.routes = {
   /* ========== Misc. ========== */
 
   'GET /recompenses': { view: 'recompenses' },
-  'GET /authentification': { view: 'authentification' }
+  'GET /authentification': { view: 'authentification' },
+  'GET /profil': { view: 'profil-statique' }
 
 };
