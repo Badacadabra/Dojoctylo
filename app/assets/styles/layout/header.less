@@ -1,0 +1,72 @@
+/* ================================================== */
+/* ===================== Header ==================== */
+/* ================================================ */
+
+header {
+  color: white;
+  height: 55px;
+  background-color: black;
+
+  h1 {
+    display: inline-block;
+    font-size: 30px;
+    padding-top: 10px;
+    margin-left: 125px;
+    font-family: underwood_championregular, sans-serif;
+  }
+
+  a#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    img {
+      height: 35px;
+    }
+  }
+
+  div#liensHeader {
+    display: inline;
+
+    a {
+      position: relative;
+      top: 17px;
+      right: 20px;
+      font-weight: bold;
+      color: white;
+      float: right;
+      margin-left: 5px;
+      font-variant: small-caps;
+      transition: color .3s ease;
+
+      &:hover {
+        color: @red;
+      }
+    }
+  }
+}
+
+/* ===================== Smartphone ==================== */
+
+@media screen and (max-width: 599px) {
+  header {
+    height: 90px;
+
+    div#liensHeader a:last-of-type {
+      display: block;
+      padding: 5px;
+      width: 100%;
+      border-top: solid 1px white;
+      text-align: right;
+      position: absolute;
+      top: 55px;
+      right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 444px) {
+  header div#liensHeader a:last-of-type {
+    text-align: center;
+  }
+}

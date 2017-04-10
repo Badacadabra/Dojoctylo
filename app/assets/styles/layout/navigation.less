@@ -1,0 +1,65 @@
+/* ================================================== */
+/* ================== Navigation =================== */
+/* ================================================ */
+
+nav#top-menu {
+  background-color: @brown;
+  box-shadow: 0 0 7px white;
+
+  .paper {
+    height: 30px;
+    background-image: url('../../images/charte-graphique/textures/papier-carreaux.png');
+  }
+
+  ul {
+    list-style-type: none;
+    text-align: center;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: large;
+    border-top: solid 3px black;
+    border-bottom: solid 3px black;
+
+    li {
+      display: inline-block;
+      padding: 15px;
+
+      a {
+        color: black;
+        padding: 10px;
+        font-family: orchideelightregular, sans-serif;
+        font-size: xx-large;
+        transition: text-shadow .3s ease;
+
+        &:hover {
+          text-shadow: 0 0 3px white;
+        }
+      }
+    }
+  }
+}
+
+/* ================== Tablette =================== */
+
+@media screen and (max-width: 1023px) {
+  nav#top-menu ul li {
+    padding: 10px;
+
+    a {
+      font-size: x-large;
+      padding: 5px;
+    }
+  }
+}
+
+/* ================== Smartphone =================== */
+
+@media screen and (max-width: 599px) {
+  nav#top-menu ul li {
+    padding: 5px;
+
+    a {
+      font-size: medium;
+    }
+  }
+}

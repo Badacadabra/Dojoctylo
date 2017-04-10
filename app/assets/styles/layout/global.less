@@ -1,0 +1,522 @@
+/* ================================================== */
+/* ===================== Global ==================== */
+/* ================================================ */
+
+/* ===================== Reset ==================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:focus {
+  outline:none;
+}
+
+::-moz-focus-inner {
+  border:0;
+}
+
+/* ==================== Polices ==================== */
+
+@font-face {
+  font-family: 'underwood_championregular';
+  src: url('/fonts/underwood/underwood_champion-webfont.eot');
+  src: url('/fonts/underwood/underwood_champion-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/underwood/underwood_champion-webfont.woff2') format('woff2'),
+       url('/fonts/underwood/underwood_champion-webfont.woff') format('woff'),
+       url('/fonts/underwood/underwood_champion-webfont.ttf') format('truetype'),
+       url('/fonts/underwood/underwood_champion-webfont.svg#underwood_championregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sf_shai_fontairegular';
+  src: url('/fonts/shai/SF_Shai_Fontai-webfont.eot');
+  src: url('/fonts/shai/SF_Shai_Fontai-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/shai/SF_Shai_Fontai-webfont.woff2') format('woff2'),
+       url('/fonts/shai/SF_Shai_Fontai-webfont.woff') format('woff'),
+       url('/fonts/shai/SF_Shai_Fontai-webfont.ttf') format('truetype'),
+       url('/fonts/shai/SF_Shai_Fontai-webfont.svg#sf_shai_fontairegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'orchideelightregular';
+  src: url('/fonts/orchidee/OrchideeLight-webfont.eot');
+  src: url('/fonts/orchidee/OrchideeLight-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/orchidee/OrchideeLight-webfont.woff2') format('woff2'),
+       url('/fonts/orchidee/OrchideeLight-webfont.woff') format('woff'),
+       url('/fonts/orchidee/OrchideeLight-webfont.ttf') format('truetype'),
+       url('/fonts/orchidee/OrchideeLight-webfont.svg#orchideelightregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* ===================== Divers ==================== */
+
+body {
+  background-image: url('../../images/charte-graphique/textures/papier-kraft.png');
+}
+
+p {
+  margin: 10px 0;
+}
+
+hr {
+  border: solid 1px black;
+}
+
+.padding {
+  padding: 50px 0;
+}
+
+.italique {
+  font-style: italic;
+}
+
+.gras {
+  font-weight: bold;
+}
+
+.contenu {
+  padding: 20px;
+  background-color: @lightgreen;
+  border-radius: 10px;
+  box-shadow: 0 0 15px black;
+
+  h2 {
+    color: #582800;
+    margin-bottom: 15px;
+  }
+}
+
+.bambou {
+  background-image: url('../../images/charte-graphique/textures/bambou.jpg');
+  box-shadow: 0 0 10px black inset;
+}
+
+.bandeau {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  color: white;
+  margin-bottom: 30px;
+  padding: 20px;
+  box-shadow: 0 0 15px black;
+
+  h2 {
+    font-size: 30px;
+    font-family: underwood_championregular, sans-serif;
+  }
+}
+
+.liste {
+  text-align: center;
+
+  p {
+    font-size: large;
+  }
+
+  ol {
+    width: 85%;
+    max-width: 800px;
+    margin: auto;
+    list-style-type: none;
+
+    li {
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 15px;
+      margin: 15px 0;
+      color: white;
+      font-family: sf_shai_fontairegular, sans-serif;
+      font-weight: bold;
+      font-size: xx-large;
+      border: solid 5px black;
+      border-image: url('../../images/charte-graphique/textures/bois.png') 30 30 round;
+    }
+  }
+}
+
+.erreursFormulaires {
+  font-style: italic;
+  font-size: small;
+  color: #CB1D2E;
+}
+
+.edit {
+  height: 30px;
+}
+
+/* ====== Pop-up (utilisée pour la modif du profil et l'ajout d'exos) ====== */
+
+.pop-up {
+  display: block;
+  padding: 20px;
+  color: white;
+  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px white;
+  position: absolute; left: 0; right: 0;
+  z-index: 2;
+
+  h3 {
+    text-align: center;
+    font-size: 42px;
+    font-family: sf_shai_fontairegular, sans-serif;
+  }
+
+  fieldset {
+    width: 50%;
+    margin: auto;
+
+    input, textarea {
+      padding: 7px;
+      margin: 17px 0;
+      width: 100%;
+      font-family: serif;
+      font-size: 14px;
+      display: block;
+      border-radius: 5px;
+    }
+
+    textarea {
+      height: 111px;
+      resize: none;
+    }
+
+    input:focus, textarea:focus {
+      background-color: @white;
+    }
+
+    input[type='submit'] {
+      font-size: x-large;
+      font-weight: bold;
+      font-variant: small-caps;
+      color: white;
+      background-color: @red;
+      border: solid 2px white;
+      cursor: pointer;
+      transition: box-shadow .3s ease;
+
+      &:hover {
+        box-shadow: 0 0 12px black inset;
+      }
+    }
+
+  }
+
+  #croix {
+    float: right;
+    background-color: black;
+    transition: opacity .3s ease;
+
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+
+div#noir {
+  .pop-up input[type="radio"] {
+    display: none;
+
+    + label {
+      color: white;
+      font-size: 17px;
+      margin-right: 15px;
+
+      span {
+        display: inline-block;
+        width: 19px;
+        height: 19px;
+        margin: -1px 8px 0 0;
+        vertical-align: middle;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 50%;
+        transition: background-color 0.3s linear;
+      }
+    }
+
+    &:checked {
+      + label span {
+        background-color: @red;
+        transition: background-color 0.3s linear;
+      }
+    }
+  }
+}
+
+div.pop-up {
+  width: 500px;
+  height: 100px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: auto;
+  border: solid 2px @red;
+  box-shadow: 0 0 25px @red;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0; 
+  z-index: 2;
+
+  button {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px 0;
+    padding: 10px;
+    color: white;
+    background-color: @red;
+    font-weight: bold;
+    font-size: large;
+    border: solid 2px white;
+    cursor: pointer;
+    transition: box-shadow .3s ease;
+
+    &:hover {
+      box-shadow: 0 0 12px black inset;
+    }
+  }
+}
+
+#fondu {
+  display: none;
+  background: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+  z-index: 1;
+  position: fixed;
+  top: 0; left: 0;
+}
+
+/* ==== Choix et descriptions (Apprendre, Pratiquer, Affronter) ==== */
+
+.choix {
+  width: 85%;
+  margin: auto;
+
+  h2 {
+    color: white;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    font-family: orchideelightregular, sans-serif;
+    font-size: xx-large;
+    border-top: solid 3px white;
+    border-left: solid 3px white;
+    border-right: solid 3px white;
+    background-color: rgba(177, 24, 26, 0.9);
+    border-radius: 20px 20px 0 0;
+  }
+
+  nav#sous-menu ul {
+    list-style-type: none;
+    border: solid 10px black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url('../../images/charte-graphique/textures/papier-kraft.png');
+    border-image: url('../../images/charte-graphique/textures/bois.png') 30 30 round;
+    box-shadow: 0 0 100px -10px black inset;
+
+    li {
+      width: 25%;
+      text-align: center;
+      margin: 15px;
+      border: solid 10px black;
+      border-image: url('../../images/charte-graphique/textures/papier-carreaux.png') 30 30 round;
+      box-shadow: 0 0 5px black;
+
+      a {
+        display: block;
+        color: white;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.8);
+        font-size: 40px;
+        font-weight: bold;
+        font-family: sf_shai_fontairegular, sans-serif;
+        transition: background-color .3s ease;
+
+        &:hover {
+          color: black;
+          background-color: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+  }
+}
+
+section.description {
+  padding-bottom: 50px;
+
+  div {
+    border: solid 2px white;
+    width: 80%;
+    margin: auto;
+    font-family: underwood_championregular;
+    font-size: large;
+  }
+}
+
+/* =========== Infobulles (tooltips) =========== */
+
+.ui-tooltip, .arrow:after {
+  background: black;
+  border: 2px solid white;
+}
+
+.ui-tooltip {
+  padding: 10px 20px;
+  color: white;
+  border-radius: 10px;
+  font: 16px "underwood_championregular", Sans-Serif;
+  box-shadow: 0 0 5px black;
+}
+
+.arrow {
+  width: 70px;
+  height: 16px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  margin-left: -35px;
+  bottom: -16px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 6px 5px 9px -9px black;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+.arrow.top {
+  top: -16px;
+  bottom: auto;
+
+  &:after {
+    bottom: -20px;
+    top: auto;
+  }
+}
+
+.arrow.left {
+  left: 20%;
+}
+
+/* =========== Ascenseurs (scrollbars) =========== */
+
+html, body {
+  height:100%;
+}
+
+.mCS-dojoctylo.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+  background-color: white;
+  width: 8px;
+}
+
+.mCS-dojoctylo.mCSB_inside > .mCSB_container {
+  margin-right: 0;
+}
+
+/* ================== Tablette ===================== */
+
+@media screen and (max-width: 1023px) {
+  .choix {
+    h2 {
+      font-size: x-large;
+    }
+
+    nav#sous-menu ul li {
+      margin: 10px;
+
+      a {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .choix {
+    width: 100%;
+
+    h2 {
+      width: 100%;
+      padding: 10px 0;
+      margin-bottom: 15px;
+      font-size: large;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 3px solid black;
+      border-image: url('/images/charte-graphique/texture-bamboo.jpg') 30 30 round;
+      border-radius: 0;
+    }
+
+    nav#sous-menu ul {
+      width: 100%;
+      margin: auto;
+      border: none;
+      background-image: none;
+      box-shadow: none;
+
+      li {
+        width: 35%;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+/* ===================== Smartphone ==================== */
+
+// Divers
+@media screen and (max-width: 599px) {
+  #wrapper {
+    padding: 30px 0;
+  }
+
+  .padding {
+    padding: 0;
+  }
+
+  .contenu {
+    padding: 15px 0;
+    border-radius: 0;
+
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+// Choix (Apprendre, Pratiquer, Affronter)
+@media screen and (max-width: 450px) {
+  .choix nav#sous-menu ul li {
+    width: 90%;
+    margin: 5px;
+  }
+}

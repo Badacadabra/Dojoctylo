@@ -1,0 +1,254 @@
+/* ================================================== */
+/* ==================== Profil ===================== */
+/* ================================================ */
+
+/* ============= Colonne de gauche ============== */
+
+section#profil {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  section#infos {
+    width: 30%;
+
+    div#presentation, div#compte-rendu {
+      margin-right: 30px;
+      border: solid 5px black;
+      font-family: underwood_championregular, sans-serif;
+      border-image: url('../../images/charte-graphique/textures/bois.png') 30 30 round;
+    }
+
+    div#presentation h2, div#compte-rendu h3 {
+      color: @darkBrown;
+      text-align: center;
+      font-family: sf_shai_fontairegular, sans-serif;
+      font-size: xx-large;
+    }
+
+    div#presentation {
+      margin-bottom: 30px;
+      overflow: auto;
+
+      img {
+        width: 100px;
+        max-height: 200px;
+        margin-right: 15px;
+        float: left;
+        border: solid 2px black;
+        transition: border-color .3s ease;
+
+        &:hover {
+          border-color: @red;
+        }
+      }
+
+      button#modifProfil {
+        color: white;
+        background-color: black;
+        font-weight: bold;
+        font-variant: small-caps;
+        width: 100%;
+        padding: 5px;
+        margin-left: auto;
+        margin-top: 10px;
+        transition: background-color .3s ease;
+
+        &:hover {
+          background-color: @red;
+          cursor: pointer;
+        }
+      }
+    }
+
+    div#compte-rendu {
+      h3 {
+        margin-bottom: 25px;
+      }
+
+      p {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+/* ============= Colonne de droite ============== */
+
+section#profil aside#stats {
+  div#placeholder {
+    width: 500px;
+    height: 300px;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  section {
+    padding: 0;
+    margin-bottom: 30px;
+    background-color: @lightgreen;
+    border: solid 5px black;
+    border-image: url('../../images/charte-graphique/textures/bois.jpg') 30 30 round;
+    box-shadow: 0 0 15px black;
+
+    &:first-of-type {
+      height: 375px;
+      width: 530px;
+    }
+
+    h3 {
+      padding: 15px;
+      color: #582800;
+      text-align: center;
+      font-size: xx-large;
+      font-family: sf_shai_fontairegular, sans-serif;
+    }
+
+    a {
+      display: block;
+      color: white;
+      background-color: black;
+      padding: 10px;
+      font-style: italic;
+      text-align: right;
+      text-shadow: 0 0 1px white;
+      transition: color .3s ease;
+
+      &:hover {
+        color: @red;
+        text-shadow: 0 0 1px @red;
+      }
+
+      &:after {
+        content: " >";
+      }
+    }
+
+    div.trophees {
+      text-align: center;
+
+      &:first-of-type { background-color: rgba(165, 42, 42, 0.5); }
+      &:nth-of-type(2) { background-color: rgba(180, 213, 60, 0.5); }
+      &:nth-of-type(3) { background-color: rgba(192, 192, 192, 0.5); }
+      &:nth-of-type(4) { background-color: rgba(233, 121, 0, 0.5); }
+      &:last-of-type { background-color: rgba(127, 187, 197, 0.5); }
+
+      h4 {
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 5px 15px;
+        text-align: center;
+        font-variant: small-caps;
+      }
+
+      img {
+        height: 60px;
+        margin: 0 10px;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+/* ==================== Tablette ===================== */
+
+@media screen and (max-width: 1023px) {
+  // Colonne de gauche
+  section#profil {
+    flex-direction: column;
+    align-items: center;
+
+    section#infos {
+      width: 540px;
+      margin-bottom: 30px;
+
+      div#presentation, div#compte-rendu {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Colonne de droite
+  section#profil aside#stats section div.trophees img {
+    height: 55px;
+  }
+}
+
+/* ==================== Smartphone ===================== */
+
+@media screen and (max-width: 599px) {
+  // Colonne de gauche
+  section#profil section#infos {
+    width: 100%;
+    padding-left: 0;
+
+    p {
+      clear: none;
+      padding: 0 10px 10px 10px;
+      font-size: small;
+    }
+
+    div#presentation, div#compte-rendu {
+      margin-right: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+
+    div#presentation h2, div#compte-rendu h3 {
+      font-size: x-large;
+    }
+
+    div#compte-rendu {
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 0;
+        padding-top: 10px;
+      }
+    }
+  }
+
+  // Colonne de droite
+  section#profil aside#stats {
+    width : 95%;
+    margin: auto;
+    padding-top: 0;
+
+    section:first-of-type {
+      width: auto;
+      height: auto;
+    }
+
+    div#placeholder {
+      width: 320px;
+      height: 160px;
+    }
+
+    section {
+      h3 {
+        font-size: x-large;
+      }
+
+      div.trophees {
+        h4 {
+        font-size: small;
+        padding: 0;
+        }
+
+        img {
+          height: 30px;
+          margin: 0 3px;
+        }
+      }
+
+      a {
+        font-size: small;
+      }
+    }
+  }
+}

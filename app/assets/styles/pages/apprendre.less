@@ -1,0 +1,327 @@
+/* ================================================== */
+/* =================== Apprendre =================== */
+/* ================================================ */
+
+/* ================ Page de conseils ================ */
+/* --> cf. classe liste */
+
+/* ================== Choix du tutoriel =================== */
+
+section#tutoriels {
+  h2, h3, p {
+    text-align: center;
+  }
+
+  h3 {
+    font-family: sf_shai_fontairegular, sans-serif;
+  }
+
+  p {
+    font-size: large;
+  }
+
+  ul {
+    width: 85%;
+    margin: auto;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    li {
+      width: 30%;
+      margin: 15px 0;
+      border: solid 5px black;
+      border-image: url('/images/charte-graphique/textures/bois.png') 30 30 round;
+
+      a {
+        display: block;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        font-size: xx-large;
+        transition: background-color .3s ease;
+
+        &:hover {
+          color: black;
+          background-color: rgba(255, 255, 255, 0.9);
+
+          article p {
+            border-top: dotted 1px black;
+          }
+        }
+
+        article p {
+          padding-top: 10px;
+          border-top: dotted 1px white;
+        }
+      }
+    }
+  }
+}
+
+/* ================== Page de tutoriel =================== */
+
+article.tuto {
+  width: 100%;
+
+  #en-tete {
+    text-align: center;
+    color: white;
+    padding: 7px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 7px white;
+    border-radius: 0;
+
+    h2 {
+      color: white;
+      font-family: sf_shai_fontairegular, sans-serif;
+      font-size: xx-large;
+    }
+  }
+
+  div#colonnes {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+    aside {
+      width: 25%;
+      margin-top: 30px;
+
+      img {
+        width: 100%;
+      }
+
+      .anecdotes {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        margin-top: 50px;
+
+        h4 {
+          font-size: large;
+          border-bottom: solid 1px white;
+        }
+      }
+    }
+
+    #texte-principal {
+      margin-top: 30px;
+      padding: 15px 0;
+      width: 70%;
+
+      h3 {
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin: 15px 0;
+        font-family: underwood_championregular, serif;
+        font-variant: small-caps;
+        background-color: rgba(0, 0, 0, 0.7);
+        background-image: url('/images/charte-graphique/illustrations/dragon.png');
+      }
+
+      p {
+        padding: 0 30px;
+      }
+
+      ul, ol {
+        margin-left: 50px;
+      }
+
+      ul {
+        list-style-type: circle;
+      }
+
+      img {
+        display: block;
+        margin: auto;
+        max-width: 95%;
+      }
+    }
+  }
+}
+
+/* ================== Page sur l'ergonomie =================== */
+
+section#ergonomie {
+  text-align: center;
+
+  div#claviers {
+    width: 85%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: solid 10px black;
+    border-image: url('/images/charte-graphique/textures/bois.png') 30 30 round;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  section {
+    margin: 20px;
+    width: 400px;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    transition: transform .3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    h3 {
+      padding: 5px;
+      background-color: black;
+      color: white;
+      font-variant: small-caps;
+      opacity: 0.9;
+    }
+
+    a {
+      color: black;
+
+      figure {
+        padding: 25px 0;
+
+        img {
+          width: 200px;
+          margin-bottom: 10px;
+        }
+
+        figcaption {
+          background-color: #E6E2A5;
+          border-top: solid 1px black;
+          border-bottom: solid 1px black;
+          font-family: sans-serif;
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: large;
+  }
+}
+
+/* =================== Tablette =================== */
+
+@media screen and (max-width: 1023px) {
+  // Page de conseils
+  section#conseils {
+    p {
+      font-size: medium;
+    }
+
+    ol li {
+      font-size: x-large;
+    }
+  }
+
+  // Choix du tutoriel
+  section#tutoriels {
+    h3 {
+      font-size: x-large;
+    }
+
+    p {
+      font-size: small;
+
+      &:first-of-type, &:nth-of-type(2) {
+        font-size: medium;
+      }
+    }
+  }
+
+  // Page de tutoriel
+  article.tuto {
+    #en-tete {
+      padding: 7px 10px;
+    }
+
+    div#colonnes {
+      aside {
+        display: none;
+      }
+
+      #texte-principal {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* =================== Smartphone =================== */
+
+@media screen and (max-width: 599px) {
+  // Page de conseils
+  section#conseils {
+    width: 100%;
+
+    ol li {
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+
+  // Choix du tutoriel
+  section#tutoriels {
+    width: 100%;
+
+    p {
+      font-size: medium;
+      padding: 0 10px;
+    }
+
+    ul {
+      display: block;
+      width: 100%;
+
+      li {
+        border-left: 0;
+        border-right: 0;
+        width: 100%;
+
+        a article p {
+          padding-top: 0;
+          border-top: 0;
+
+          &:first-of-type {
+            padding-top: 12px;
+            font-size: large;
+          }
+
+          &:nth-of-type(2) {
+            padding-bottom: 12px;
+            font-size: large;
+          }
+        }
+
+        a:hover article p {
+          border-top: 0;
+        }
+      }
+    }
+  }
+
+  // Page de tutoriel
+  article.tuto div#colonnes {
+    width: 100%;
+  }
+
+  // Page sur l'ergonomie
+  section#ergonomie {
+    width: 100%;
+
+    div#claviers {
+      border-left: 0;
+      border-right: 0;
+    }
+
+    p {
+      font-size: medium;
+      padding: 0 10px;
+    }
+  }
+}

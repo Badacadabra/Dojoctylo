@@ -1,0 +1,280 @@
+/* ================================================== */
+/* ============= Pratiquer & Affronter ============= */
+/* ================================================ */
+
+/* Styles statiques */
+
+section#corps div#noir {
+  min-height: 533px;
+  background-color: black;
+
+  button#ajoutExercice, a#gererExercices, button#activerTchat {
+    background-color: black;
+    float: right;
+    margin: 30px 30px 0 0;
+    transition: opacity .3s ease;
+
+    img {
+      height: 30px;
+    }
+  }
+
+  button#ajoutExercice:hover, a#gererExercices:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  button#ajoutExercice {
+    margin-right: 80px;
+  }
+
+  section#formulaireAjoutExercice {
+    position: static;
+  }
+
+  section#exercice {
+    color: white;
+    text-align: center;
+    width: 700px;
+    margin: auto;
+
+    h2 {
+      font-family: 'sf_shai_fontairegular', serif;
+      font-size: xx-large;
+      margin-bottom: 30px;
+    }
+
+    div#top-container {
+      min-height: 42px;
+      padding-bottom: 12px;
+    }
+
+    div#a-taper {
+      text-align: left;
+      width: 600px;
+      height: 198px;
+      margin: auto;
+      padding: 10px;
+      border: solid 3px white;
+      font-family: monospace;
+      font-size: 20px;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    div#dactylo {
+      margin-top: 20px;
+
+      textarea#zone-saisie {
+        padding: 10px;
+        height: 25px;
+        width: 550px;
+        font-size: 20px;
+        display: inline-block;
+        overflow: hidden;
+        resize: none;
+        border-radius: 5px;
+
+        &:focus {
+          background-color: @white;
+        }
+      }
+
+      button#refresh {
+        display: inline-block;
+        background-color: transparent;
+
+        &:hover, &:focus {
+          animation: monAnimation .5s linear infinite;
+          cursor: pointer;
+        }
+      }
+    }
+
+    div#performance {
+      margin-top: 20px;
+      font-size: large;
+
+      #temps {
+        font-family: 'sf_shai_fontairegular', serif;
+        font-size: xx-large;
+      }
+
+      #vitesse, #precision {
+        display: inline-block;
+        background-color: @red;
+        position:absolute;
+        left:0;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+        width: 620px;
+        height: 30px;
+        font-size: x-large;
+        font-weight: bold;
+        text-shadow: 0 0 3px black;
+        box-shadow: 0 0 10px black;
+      }
+
+      #vitesse {
+        top: 420px;
+      }
+
+      #precision {
+        top: 470px;
+      }
+    }
+
+    div#difficulte button {
+      color: white;
+      margin: 10px;
+      font-weight: bold;
+      padding: 7px;
+      border-radius: 3px;
+
+      &:first-of-type { background-color: green; }
+      &:nth-of-type(2) { background-color: @orange; }
+      &:last-of-type { background-color: @red; }
+
+      &:hover {
+        text-shadow: 0 0 5px white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@keyframes monAnimation {
+  from { transform: rotate(180deg); }
+  to { transform: rotate(-180deg); }
+}
+
+/* Styles dynamiques (exercices) */
+
+.valide {
+  color: white;
+  background-color: green;
+}
+
+.invalide {
+  color: white;
+  background-color: @red;
+}
+
+.next {
+  background-color: gray;
+}
+
+/* Gestion des exercices personnalisés */
+
+section#corps div#noir {
+  section#formulaireModifExercice {
+    position: static;
+    padding: 80px 0 0 0;
+    box-shadow: none;
+  }
+
+  button#activerTchat {
+    cursor: pointer;
+  }
+
+  // Tchat
+  section#exerecice section#tchat {
+    background-color: black;
+    padding: 15px 5px;
+    border: solid 2px white;
+    border-radius: 5px;
+    height: 350px;
+    width: 350px;
+    cursor: move;
+    position: absolute;
+    top: 300px; left: 50px;
+
+    input#message, button#envoyer {
+      padding: 5px;
+      color: white;
+      border: solid 2px white;
+      background-color: black;
+    }
+
+    button#envoyer {
+      font-weight: bold;
+      cursor: pointer;
+
+      &:focus {
+        background-color: @red;
+      }
+    }
+
+    div#discussion {
+      padding-top: 5px;
+      font-size: large;
+      height: 90%;
+      overflow: hidden;
+
+      p.entreeTchat {
+        color: @red;
+      }
+    }
+  }
+}
+
+/* Hack pour la scrollbar du tchat */
+
+@keyframes nodeInserted {
+  from { opacity: 0.99; }
+  to { opacity: 1; }
+}
+
+@-moz-keyframes nodeInserted {
+  from { opacity: 0.99; }
+  to { opacity: 1; }
+}
+
+@-webkit-keyframes nodeInserted {
+  from { opacity: 0.99; }
+  to { opacity: 1; }
+}
+
+@-ms-keyframes nodeInserted {
+  from { opacity: 0.99; }
+  to { opacity: 1; }
+}
+
+@-o-keyframes nodeInserted {
+  from { opacity: 0.99; }
+  to { opacity: 1; }
+}
+
+div#discussion > p {
+  animation-duration: 0.001s;
+  -o-animation-duration: 0.001s;
+  -ms-animation-duration: 0.001s;
+  -moz-animation-duration: 0.001s;
+  -webkit-animation-duration: 0.001s;
+  animation-name: nodeInserted;
+  -o-animation-name: nodeInserted;
+  -ms-animation-name: nodeInserted;
+  -moz-animation-name: nodeInserted;
+  -webkit-animation-name: nodeInserted;
+}
+
+/* ============= Tablette ============= */
+
+@media screen and (max-width: 1023px) {
+  section#exercice {
+      width: 65%;
+  }
+}
+
+/* ============= Smartphone ============= */
+
+@media screen and (max-width: 599px) {
+  section#corps div#noir {
+    padding: 30px 0;
+
+    section#exercice {
+      width: 75%;
+    }
+  }
+}

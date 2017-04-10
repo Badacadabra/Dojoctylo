@@ -1,0 +1,46 @@
+/* ================================================== */
+/* ====================== 404 ====================== */
+/* ================================================ */
+
+section#erreur {
+  p {
+    color: @dark;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: sf_shai_fontairegular, serif;
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+  }
+}
+
+/* ====================== Tablette ====================== */
+
+@media screen and (max-width: 1023px) {
+  section#erreur {
+    p {
+      font-size: 35px;
+    }
+
+    img {
+      width: 500px;
+    }
+  }
+}
+
+/* ====================== Smartphone ====================== */
+
+@media screen and (max-width: 599px) {
+  section#erreur {
+    p {
+      font-size: 30px;
+    }
+
+    img {
+      width: 300px;
+    }
+  }
+}

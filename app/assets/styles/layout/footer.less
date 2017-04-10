@@ -1,0 +1,287 @@
+/* ================================================== */
+/* ===================== Footer ==================== */
+/* ================================================ */
+
+/* ===================== Menu ====================== */
+
+footer {
+  background-color: @brown;
+  display: flex;
+  border-top: solid 3px black;
+  border-bottom: solid 3px black;
+  height: 55px;
+
+  ul:first-of-type {
+    list-style-type: none;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    background-color: @brown;
+
+    li {
+      display: inline-block;
+      margin-right: 20px;
+      padding: 3px 0;
+
+      &:after {
+        content: "|";
+      }
+
+      &:last-of-type {
+        &:after {
+          content: "";
+        } 
+      }
+
+      a {
+        color: black;
+        padding-right: 20px;
+        font-size: medium;
+        font-family: underwood_championregular, sans-serif;
+        font-weight: bold;
+        transition: color .2s ease-out;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  ul:last-of-type {
+    width: 20%;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      margin-left: 10px;
+
+      a img {
+        height: 40px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+/* ================= Pages du footer ================= */
+
+.pied-de-page {
+  width: 85%;
+  margin: auto;
+
+  h3 {
+    margin-top: 15px;
+  }
+}
+
+section#mentions-legales address {
+  display: block;
+  margin: 15px 0;
+}
+
+section#plan-du-site {
+  h2 {
+    text-align: center;
+  }
+
+  a {
+    color: white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    text-align: center;
+  }
+
+  > ul > li {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 15px;
+    background-color: black;
+    vertical-align: text-top;
+
+    ul > li > ul > li:first-of-type {
+      margin-top: 15px; 
+    }
+
+    a {
+      font-weight: bold;
+    }
+  }
+}
+
+section#classement {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  div#periodes-classement ul li {
+    display: inline-block;
+    margin: 10px;
+
+    a {
+      color: white;
+      font-weight: bold;
+      padding: 5px;
+      border: solid 2px white;
+      border-radius: 5px;
+      transition: background-color .3s linear;
+
+      &:hover {
+        color: black;
+        background-color: white;
+        border: solid 2px black;
+      }
+    }
+  }
+
+  div#tableaux-classement table {
+    border-collapse: collapse;
+    margin: auto;
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 0 0 3px black;
+
+    caption {
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+      font-family: orchideelightregular, sans-serif;
+    }
+
+    tr {
+      th, td {
+        border: solid 2px black;
+        padding: 15px;
+      }
+
+      th {
+        color: white;
+        background-color: @red;
+        font-family: sf_shai_fontairegular, sans-serif;
+        font-size: 25px;
+      }
+
+      td {
+        background-color: @lightgreen;
+
+        a {
+          color: black;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+/* ===================== Tablette ==================== */
+
+// Menu
+@media screen and (max-width: 1023px) {
+  footer ul:first-of-type li {
+    margin-left: 0;
+    margin-right: 10px;
+
+    a {
+      padding-right: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+    footer ul:first-of-type li a {
+        font-size: small;
+    }
+}
+
+/* ===================== Smartphone ==================== */
+
+@media screen and (max-width: 599px) {
+  // Menu
+
+  footer {
+    height: initial;
+    display: block;
+
+    ul{
+      &:first-of-type {
+        width: 100%;
+        margin-bottom: 5px;
+
+        li {
+          display: block;
+          margin: 0;
+          padding: 5px 0;
+          border-bottom: dotted 1px black;
+
+          &:after {
+            content: "";
+          }
+
+          &:last-of-type {
+            border: 0;
+          }
+
+          a {
+            display: block;
+            font-size: medium;
+          }
+        }
+      }
+
+      &:last-of-type {
+        width: 100%;
+        margin: auto;
+        padding: 12px 0;
+        background-color: black;
+      }
+    }
+  }
+
+  // Pages du footer
+
+  .pied-de-page {
+    width: 100%;
+
+    h3, p, address {
+      padding: 0 15px;
+    }
+
+    h3 {
+      font-size: medium;
+    }
+
+    p {
+      font-size: small;
+    }
+  }
+
+  section#mentions-legales address {
+      font-size: small;
+  }
+
+  section#plan-du-site {
+    > ul > li {
+      display: block;
+      padding: 0;
+      background-color: black;
+    }
+
+    ul li a {
+      color: white;
+      display: block;
+    }
+  }
+}

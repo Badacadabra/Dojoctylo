@@ -1,0 +1,160 @@
+/* ================================================== */
+/* ==================== Accueil ==================== */
+/* ================================================ */
+
+#accueil {
+  width: 85%;
+  margin: auto;
+
+  section {
+    padding: 30px;
+    margin: 30px 0;
+    border: solid 10px black;
+    display: flex;
+    justify-content: space-between;
+    border-image: url('../../images/charte-graphique/textures/bois.png') 30 30 round;
+    box-shadow: 0 0 10px black;
+    text-shadow: 0 0 1px black;
+
+    aside {
+      width: 25%;
+
+      img {
+        /* width: 250px; */
+        height: 220px;
+        display: block;
+        margin: auto;
+      }
+    }
+
+    article {
+      width: 70%;
+
+      h2 {
+        margin-bottom: 30px;
+        text-align: center;
+        font-family: sf_shai_fontairegular, sans-serif;
+        font-size: 42px;
+        border: solid 2px white;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 100px;
+        box-shadow: 0 0 10px white;
+        transition: background-color .5s ease-in-out;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.3);
+          border-color: black;
+          box-shadow: 0 0 10px black;
+        }
+
+        a {
+          display: block;
+          color: white;
+          padding: 10px;
+
+          &:hover {
+            color: black;
+          }
+        }
+      }
+
+      p {
+        font-family: underwood_championregular, serif;
+        font-size: 22px;
+        text-align: center;
+        width: 100%;
+        margin: auto;
+      }
+    }
+
+    &:first-of-type {
+      background-color: rgba(165, 42, 42, 0.5);
+    }
+
+    &:nth-of-type(2) {
+      background-color: rgba(180, 213, 60, 0.5);
+    }
+
+    &:nth-of-type(3) {
+      background-color: rgba(192, 192, 192, 0.5);
+    }
+
+    &:nth-of-type(4) {
+      background-color: rgba(233, 121, 0, 0.5);
+    }
+
+    &:last-of-type {
+      background-color: rgba(127, 187, 197, 0.5);
+    }
+  }
+}
+
+/* ==================== Tablette ==================== */
+
+@media screen and (max-width: 1023px) {
+  #accueil section {
+    padding: 20px;
+
+    article {
+      h2 {
+        font-size: 35px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+    aside img {
+      height: 180px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #accueil section {
+    article {
+      h2 {
+        font-size: 25px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    aside img {
+      height: 150px;
+    }
+  }
+}
+
+/* ==================== Smartphone ==================== */
+
+@media screen and (max-width: 599px) {
+  #accueil {
+    width: 100%;
+
+    section {
+      border-left: 0;
+      border-right: 0;
+
+      aside {
+        display: none;
+      }
+
+      article {
+        width: 100%;
+
+        h2 {
+          margin-bottom: 15px;
+          border-radius: 10px;
+
+          a {
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+/* ================================================== */
+/* =================== Connexion =================== */
+/* ================================================ */
+
+section#login-signup {
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  h2 {
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: solid 1px white;
+    font-family: underwood_championregular, serif;
+  }
+
+  input {
+    display: block;
+    padding: 7px;
+    margin: 10px 0;
+    border: solid 2px white;
+    border-radius: 8px;
+  }
+
+  input[type='text']:focus, input[type='password']:focus {
+    background-color: @white;
+  }
+
+  input[type='submit'] {
+    color: white;
+    background-color: @red;
+    font-weight: bold;
+    margin-top: 15px;
+
+    &:hover {
+      text-shadow: 0 0 1px white;
+    }
+  }
+}
+
+section#login, section#signup {
+  background-color: black;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px white;
+  opacity: 0.9;
+  transition: box-shadow .3s ease;
+}
+
+section#login:hover, section#signup:hover {
+  box-shadow: 0 0 10px @red;
+}
+
+@media screen and (max-width: 1200px) {
+    section#corps section#login-signup img {
+        display: none;
+    }
+}
+
+/* =================== Tablette =================== */
+
+@media screen and (max-width: 830px) {
+    section#login-signup {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    section#login-signup {
+        width: 98%;
+    }
+}
+
+/* =================== Smartphone =================== */
+
+@media screen and (max-width: 599px) {
+  section#login-signup {
+    display: block;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+
+    h2 {
+      font-size: large;
+      border: 0;
+      text-align: center;
+      font-variant: small-caps;
+    }
+
+    section#login, section#signup {
+      padding: 30px 0;
+      box-shadow: none;
+      border-radius: 0;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+    section#login {
+      border-bottom: solid 2px white;
+    }
+
+    form {
+      width: 100%;
+
+      input {
+        width: 60%;
+        margin: auto;
+      }
+
+      input[type='text'], input[type='password'] {
+        border: solid 2px black;
+      }
+
+      input[type='submit'] {
+        width: 35%;
+      }
+    }
+  }
+}
